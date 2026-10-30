@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>El escáner seleccionado está inactivo.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>Se interrumpió la comunicación con el dispositivo de escaneo.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -42,9 +45,6 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Sin hojas en el alimentador.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>No tiene permiso para copiar el contenido del archivo '{0}'.</value>
-  </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>El escáner seleccionado no admite el uso dúplex. Si el escáner si admite dúplex, intente utilizar un controlador diferente.</value>
   </data>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>El escáner se está calentando.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>El controlador SANE no está disponible. Asegúrese de instalar los paquetes necesarios:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>El motor OCR no está disponible. Asegúrese de instalar el paquete necesario:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>El controlador seleccionado no está admitido en este sistema.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>Se ha producido un error ejecutando OCR.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>La operación OCR demoró</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>El proceso de trabajo falló.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>El proceso de trabajo falló. Verifique el visor de eventos de Windows.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Escáner desconocido</value>
   </data>
 </root>

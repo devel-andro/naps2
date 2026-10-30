@@ -20,19 +20,6 @@ public class UpdateOperation : OperationBase
     private string? _tempFolder;
     private string? _tempPath;
 
-    static UpdateOperation()
-    {
-        try
-        {
-            const int tls13 = 12288;
-            ServicePointManager.SecurityProtocol = (SecurityProtocolType) tls13;
-        }
-        catch (NotSupportedException)
-        {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-        }
-    }
-
     public UpdateOperation(ErrorOutput errorOutput, DesktopController desktopController,
         DesktopFormProvider desktopFormProvider)
     {
@@ -92,13 +79,13 @@ public class UpdateOperation : OperationBase
                 e.Error.PreserveStackTrace();
                 throw e.Error;
             }
-            if (!VerifyHash())
+            if (!VerifyHash(_tempPath!, _update!.Sha256))
             {
                 Log.Error($"Update error for {_update!.Name}: hash does not match");
                 _errorOutput.DisplayError(MiscResources.UpdateError);
                 return;
             }
-            if (!VerifySignature())
+            if (!VerifySignature(_update!.Sha256, _update.Signature256))
             {
                 Log.Error($"Update error for {_update!.Name}: signature does not validate");
                 _errorOutput.DisplayError(MiscResources.UpdateError);
@@ -168,20 +155,27 @@ public class UpdateOperation : OperationBase
         }
     }
 
-    private bool VerifyHash()
+    internal static bool VerifyHash(string path, byte[] expectedSha256)
     {
-        using var sha = SHA1.Create();
-        using FileStream stream = File.OpenRead(_tempPath!);
+        using var sha = SHA256.Create();
+        using FileStream stream = File.OpenRead(path);
         byte[] checksum = sha.ComputeHash(stream);
-        return checksum.SequenceEqual(_update!.Sha1);
+        return checksum.SequenceEqual(expectedSha256);
     }
 
-    private bool VerifySignature()
+    internal static bool VerifySignature(byte[] sha256, byte[] signature256)
     {
-        var cert = new X509Certificate2(ClientCreds_.naps2_public);
+        var cert = X509CertificateLoader.LoadCertificate(ClientCreds_.naps2_public);
         var csp = cert.GetRSAPublicKey();
         if (csp == null) return false;
-        return csp.VerifyHash(_update!.Sha1, _update.Signature, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+        try
+        {
+            return csp.VerifyHash(sha256, signature256, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+        }
+        catch (CryptographicException)
+        {
+            return false;
+        }
     }
 
     private void DownloadProgress(object sender, DownloadProgressChangedEventArgs e)

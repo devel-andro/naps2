@@ -62,9 +62,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] accept {
+        internal static byte[] accept_32 {
             get {
-                object obj = ResourceManager.GetObject("accept", resourceCulture);
+                object obj = ResourceManager.GetObject("accept_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -72,9 +72,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] accept_small {
+        internal static byte[] accept_16 {
             get {
-                object obj = ResourceManager.GetObject("accept_small", resourceCulture);
+                object obj = ResourceManager.GetObject("accept_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -82,9 +82,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] add {
+        internal static byte[] add_32 {
             get {
-                object obj = ResourceManager.GetObject("add", resourceCulture);
+                object obj = ResourceManager.GetObject("add_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -92,9 +92,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] add_small {
+        internal static byte[] add_16 {
             get {
-                object obj = ResourceManager.GetObject("add_small", resourceCulture);
+                object obj = ResourceManager.GetObject("add_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -102,9 +102,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] application_cascade {
+        internal static byte[] apple_mail_32 {
             get {
-                object obj = ResourceManager.GetObject("application_cascade", resourceCulture);
+                object obj = ResourceManager.GetObject("apple_mail_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -112,9 +112,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_down {
+        internal static byte[] apple_mail_64 {
             get {
-                object obj = ResourceManager.GetObject("arrow_down", resourceCulture);
+                object obj = ResourceManager.GetObject("apple_mail_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -122,9 +122,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_down_small {
+        internal static byte[] application_cascade_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_down_small", resourceCulture);
+                object obj = ResourceManager.GetObject("application_cascade_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -132,9 +132,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_left {
+        internal static byte[] application_cascade_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow_left", resourceCulture);
+                object obj = ResourceManager.GetObject("application_cascade_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -142,9 +142,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_out {
+        internal static byte[] application_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_out", resourceCulture);
+                object obj = ResourceManager.GetObject("application_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -152,9 +152,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_refresh {
+        internal static byte[] application_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow_refresh", resourceCulture);
+                object obj = ResourceManager.GetObject("application_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -162,9 +162,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_right {
+        internal static byte[] application_side_list_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_right", resourceCulture);
+                object obj = ResourceManager.GetObject("application_side_list_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -172,9 +172,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_rotate_anticlockwise {
+        internal static byte[] application_side_list_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow_rotate_anticlockwise", resourceCulture);
+                object obj = ResourceManager.GetObject("application_side_list_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -182,9 +182,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_rotate_anticlockwise_small {
+        internal static byte[] arrow_down_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_rotate_anticlockwise_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_down_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -192,9 +192,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_rotate_clockwise {
+        internal static byte[] arrow_down_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow_rotate_clockwise", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_down_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -202,9 +202,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_rotate_clockwise_small {
+        internal static byte[] arrow_left_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_rotate_clockwise_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_left_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -212,9 +212,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_switch {
+        internal static byte[] arrow_left_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow_switch", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_left_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -222,9 +222,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_switch_small {
+        internal static byte[] arrow_out_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_switch_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_out_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -232,9 +232,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_up {
+        internal static byte[] arrow_out_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow_up", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_out_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -242,9 +242,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] arrow_up_small {
+        internal static byte[] arrow_refresh_32 {
             get {
-                object obj = ResourceManager.GetObject("arrow_up_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_refresh_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -252,9 +252,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] blueprints {
+        internal static byte[] arrow_refresh_64 {
             get {
-                object obj = ResourceManager.GetObject("blueprints", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_refresh_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -262,9 +262,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] blueprints_small {
+        internal static byte[] arrow_right_32 {
             get {
-                object obj = ResourceManager.GetObject("blueprints_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_right_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -272,9 +272,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] btn_donate_LG {
+        internal static byte[] arrow_right_16 {
             get {
-                object obj = ResourceManager.GetObject("btn_donate_LG", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_right_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -282,9 +282,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cancel {
+        internal static byte[] arrow_rotate_anticlockwise_32 {
             get {
-                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_rotate_anticlockwise_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -292,9 +292,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cancel_small {
+        internal static byte[] arrow_rotate_anticlockwise_64 {
             get {
-                object obj = ResourceManager.GetObject("cancel_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_rotate_anticlockwise_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -302,9 +302,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] close {
+        internal static byte[] arrow_rotate_anticlockwise_16 {
             get {
-                object obj = ResourceManager.GetObject("close", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_rotate_anticlockwise_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -312,9 +312,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cog {
+        internal static byte[] arrow_rotate_clockwise_32 {
             get {
-                object obj = ResourceManager.GetObject("cog", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_rotate_clockwise_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -322,9 +322,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cog_small {
+        internal static byte[] arrow_rotate_clockwise_16 {
             get {
-                object obj = ResourceManager.GetObject("cog_small", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_rotate_clockwise_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -332,9 +332,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] color_gradient {
+        internal static byte[] arrow_switch_32 {
             get {
-                object obj = ResourceManager.GetObject("color_gradient", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_switch_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -342,9 +342,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] color_management {
+        internal static byte[] arrow_switch_16 {
             get {
-                object obj = ResourceManager.GetObject("color_management", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_switch_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -352,9 +352,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] color_wheel {
+        internal static byte[] arrow_up_32 {
             get {
-                object obj = ResourceManager.GetObject("color_wheel", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_up_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -362,9 +362,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] contrast {
+        internal static byte[] arrow_up_16 {
             get {
-                object obj = ResourceManager.GetObject("contrast", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_up_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -372,9 +372,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] contrast_high {
+        internal static byte[] ask_32 {
             get {
-                object obj = ResourceManager.GetObject("contrast_high", resourceCulture);
+                object obj = ResourceManager.GetObject("ask_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -382,9 +382,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] contrast_with_sun {
+        internal static byte[] ask_64 {
             get {
-                object obj = ResourceManager.GetObject("contrast_with_sun", resourceCulture);
+                object obj = ResourceManager.GetObject("ask_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -392,9 +392,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] control_play_blue {
+        internal static byte[] blueprints_32 {
             get {
-                object obj = ResourceManager.GetObject("control_play_blue", resourceCulture);
+                object obj = ResourceManager.GetObject("blueprints_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -402,9 +402,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] control_play_blue_small {
+        internal static byte[] blueprints_64 {
             get {
-                object obj = ResourceManager.GetObject("control_play_blue_small", resourceCulture);
+                object obj = ResourceManager.GetObject("blueprints_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -412,9 +412,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cross {
+        internal static byte[] blueprints_16 {
             get {
-                object obj = ResourceManager.GetObject("cross", resourceCulture);
+                object obj = ResourceManager.GetObject("blueprints_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -422,9 +422,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] cross_small {
+        internal static byte[] broom_32 {
             get {
-                object obj = ResourceManager.GetObject("cross_small", resourceCulture);
+                object obj = ResourceManager.GetObject("broom_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -432,9 +432,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] diskette {
+        internal static byte[] broom_64 {
             get {
-                object obj = ResourceManager.GetObject("diskette", resourceCulture);
+                object obj = ResourceManager.GetObject("broom_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -442,9 +442,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] email_attach {
+        internal static byte[] cancel_32 {
             get {
-                object obj = ResourceManager.GetObject("email_attach", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -452,9 +452,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] email_setting {
+        internal static byte[] cancel_64 {
             get {
-                object obj = ResourceManager.GetObject("email_setting", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -462,9 +462,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] email_small {
+        internal static byte[] cancel_16 {
             get {
-                object obj = ResourceManager.GetObject("email_small", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -472,9 +472,429 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] exclamation {
+        internal static byte[] cog_64 {
             get {
-                object obj = ResourceManager.GetObject("exclamation", resourceCulture);
+                object obj = ResourceManager.GetObject("cog_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] cog_32 {
+            get {
+                object obj = ResourceManager.GetObject("cog_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] cog_16 {
+            get {
+                object obj = ResourceManager.GetObject("cog_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] color_gradient_32 {
+            get {
+                object obj = ResourceManager.GetObject("color_gradient_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] color_gradient_16 {
+            get {
+                object obj = ResourceManager.GetObject("color_gradient_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] color_management_32 {
+            get {
+                object obj = ResourceManager.GetObject("color_management_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] color_management_16 {
+            get {
+                object obj = ResourceManager.GetObject("color_management_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] color_wheel_32 {
+            get {
+                object obj = ResourceManager.GetObject("color_wheel_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] color_wheel_16 {
+            get {
+                object obj = ResourceManager.GetObject("color_wheel_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] column_double_32 {
+            get {
+                object obj = ResourceManager.GetObject("column_double_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] column_double_16 {
+            get {
+                object obj = ResourceManager.GetObject("column_double_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] combine_32 {
+            get {
+                object obj = ResourceManager.GetObject("combine_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] combine_hor_32 {
+            get {
+                object obj = ResourceManager.GetObject("combine_hor_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] combine_hor_16 {
+            get {
+                object obj = ResourceManager.GetObject("combine_hor_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] combine_16 {
+            get {
+                object obj = ResourceManager.GetObject("combine_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] combine_ver_32 {
+            get {
+                object obj = ResourceManager.GetObject("combine_ver_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] combine_ver_16 {
+            get {
+                object obj = ResourceManager.GetObject("combine_ver_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] contrast_32 {
+            get {
+                object obj = ResourceManager.GetObject("contrast_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] contrast_high_32 {
+            get {
+                object obj = ResourceManager.GetObject("contrast_high_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] contrast_high_16 {
+            get {
+                object obj = ResourceManager.GetObject("contrast_high_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] contrast_16 {
+            get {
+                object obj = ResourceManager.GetObject("contrast_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] contrast_with_sun_32 {
+            get {
+                object obj = ResourceManager.GetObject("contrast_with_sun_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] contrast_with_sun_16 {
+            get {
+                object obj = ResourceManager.GetObject("contrast_with_sun_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] control_play_blue_32 {
+            get {
+                object obj = ResourceManager.GetObject("control_play_blue_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] control_play_blue_64 {
+            get {
+                object obj = ResourceManager.GetObject("control_play_blue_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] control_play_blue_16 {
+            get {
+                object obj = ResourceManager.GetObject("control_play_blue_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] copy_32 {
+            get {
+                object obj = ResourceManager.GetObject("copy_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] copy_16 {
+            get {
+                object obj = ResourceManager.GetObject("copy_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] cross_32 {
+            get {
+                object obj = ResourceManager.GetObject("cross_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] cross_64 {
+            get {
+                object obj = ResourceManager.GetObject("cross_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] cross_16 {
+            get {
+                object obj = ResourceManager.GetObject("cross_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] device_32 {
+            get {
+                object obj = ResourceManager.GetObject("device_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] device_64 {
+            get {
+                object obj = ResourceManager.GetObject("device_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] document_32 {
+            get {
+                object obj = ResourceManager.GetObject("document_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] document_16 {
+            get {
+                object obj = ResourceManager.GetObject("document_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] email_32 {
+            get {
+                object obj = ResourceManager.GetObject("email_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] email_attach_32 {
+            get {
+                object obj = ResourceManager.GetObject("email_attach_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] email_attach_64 {
+            get {
+                object obj = ResourceManager.GetObject("email_attach_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] email_setting_32 {
+            get {
+                object obj = ResourceManager.GetObject("email_setting_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] email_16 {
+            get {
+                object obj = ResourceManager.GetObject("email_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] exclamation_64 {
+            get {
+                object obj = ResourceManager.GetObject("exclamation_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] exclamation_32 {
+            get {
+                object obj = ResourceManager.GetObject("exclamation_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] exclamation_16 {
+            get {
+                object obj = ResourceManager.GetObject("exclamation_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -492,9 +912,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] file_extension_pdf {
+        internal static byte[] file_extension_pdf_32 {
             get {
-                object obj = ResourceManager.GetObject("file_extension_pdf", resourceCulture);
+                object obj = ResourceManager.GetObject("file_extension_pdf_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -502,9 +922,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] file_extension_pdf_small {
+        internal static byte[] file_extension_pdf_64 {
             get {
-                object obj = ResourceManager.GetObject("file_extension_pdf_small", resourceCulture);
+                object obj = ResourceManager.GetObject("file_extension_pdf_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -512,9 +932,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] folder_picture {
+        internal static byte[] file_extension_pdf_16 {
             get {
-                object obj = ResourceManager.GetObject("folder_picture", resourceCulture);
+                object obj = ResourceManager.GetObject("file_extension_pdf_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -522,9 +942,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] gmail {
+        internal static byte[] folder_picture_32 {
             get {
-                object obj = ResourceManager.GetObject("gmail", resourceCulture);
+                object obj = ResourceManager.GetObject("folder_picture_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -532,9 +952,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] hourglass_grey {
+        internal static byte[] folder_picture_64 {
             get {
-                object obj = ResourceManager.GetObject("hourglass_grey", resourceCulture);
+                object obj = ResourceManager.GetObject("folder_picture_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -542,9 +962,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] image_edit {
+        internal static byte[] gmail_32 {
             get {
-                object obj = ResourceManager.GetObject("image_edit", resourceCulture);
+                object obj = ResourceManager.GetObject("gmail_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -552,9 +972,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] info_rhombus {
+        internal static byte[] gmail_64 {
             get {
-                object obj = ResourceManager.GetObject("info_rhombus", resourceCulture);
+                object obj = ResourceManager.GetObject("gmail_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -562,9 +982,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] information {
+        internal static byte[] help_16 {
             get {
-                object obj = ResourceManager.GetObject("information", resourceCulture);
+                object obj = ResourceManager.GetObject("help_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -572,9 +992,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] information_small {
+        internal static byte[] help_32 {
             get {
-                object obj = ResourceManager.GetObject("information_small", resourceCulture);
+                object obj = ResourceManager.GetObject("help_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -582,9 +1002,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] key_small {
+        internal static byte[] hourglass_grey_32 {
             get {
-                object obj = ResourceManager.GetObject("key_small", resourceCulture);
+                object obj = ResourceManager.GetObject("hourglass_grey_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -592,9 +1012,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] mail_yellow {
+        internal static byte[] information_64 {
             get {
-                object obj = ResourceManager.GetObject("mail_yellow", resourceCulture);
+                object obj = ResourceManager.GetObject("information_64", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -602,9 +1022,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] outlookweb {
+        internal static byte[] information_32 {
             get {
-                object obj = ResourceManager.GetObject("outlookweb", resourceCulture);
+                object obj = ResourceManager.GetObject("information_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -612,9 +1032,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] pdf_email {
+        internal static byte[] information_16 {
             get {
-                object obj = ResourceManager.GetObject("pdf_email", resourceCulture);
+                object obj = ResourceManager.GetObject("information_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -622,9 +1042,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] pencil {
+        internal static byte[] key_32 {
             get {
-                object obj = ResourceManager.GetObject("pencil", resourceCulture);
+                object obj = ResourceManager.GetObject("key_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -632,9 +1052,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] pencil_small {
+        internal static byte[] key_16 {
             get {
-                object obj = ResourceManager.GetObject("pencil_small", resourceCulture);
+                object obj = ResourceManager.GetObject("key_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -642,9 +1062,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] picture {
+        internal static byte[] keyboard_32 {
             get {
-                object obj = ResourceManager.GetObject("picture", resourceCulture);
+                object obj = ResourceManager.GetObject("keyboard_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -652,9 +1072,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] picture_edit {
+        internal static byte[] keyboard_16 {
             get {
-                object obj = ResourceManager.GetObject("picture_edit", resourceCulture);
+                object obj = ResourceManager.GetObject("keyboard_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -662,9 +1082,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] picture_save {
+        internal static byte[] large_tiles_32 {
             get {
-                object obj = ResourceManager.GetObject("picture_save", resourceCulture);
+                object obj = ResourceManager.GetObject("large_tiles_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -672,9 +1092,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] picture_small {
+        internal static byte[] large_tiles_16 {
             get {
-                object obj = ResourceManager.GetObject("picture_small", resourceCulture);
+                object obj = ResourceManager.GetObject("large_tiles_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -682,9 +1102,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] pictures {
+        internal static byte[] mail_yellow_32 {
             get {
-                object obj = ResourceManager.GetObject("pictures", resourceCulture);
+                object obj = ResourceManager.GetObject("mail_yellow_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -692,9 +1112,229 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] printer {
+        internal static byte[] mail_yellow_64 {
             get {
-                object obj = ResourceManager.GetObject("printer", resourceCulture);
+                object obj = ResourceManager.GetObject("mail_yellow_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] network_ip_32 {
+            get {
+                object obj = ResourceManager.GetObject("network_ip_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] network_ip_64 {
+            get {
+                object obj = ResourceManager.GetObject("network_ip_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] network_ip_16 {
+            get {
+                object obj = ResourceManager.GetObject("network_ip_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] outlooknew_32 {
+            get {
+                object obj = ResourceManager.GetObject("outlooknew_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] outlooknew_64 {
+            get {
+                object obj = ResourceManager.GetObject("outlooknew_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] outlookweb_32 {
+            get {
+                object obj = ResourceManager.GetObject("outlookweb_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] outlookweb_64 {
+            get {
+                object obj = ResourceManager.GetObject("outlookweb_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] paste_32 {
+            get {
+                object obj = ResourceManager.GetObject("paste_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] paste_16 {
+            get {
+                object obj = ResourceManager.GetObject("paste_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pencil_64 {
+            get {
+                object obj = ResourceManager.GetObject("pencil_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pencil_32 {
+            get {
+                object obj = ResourceManager.GetObject("pencil_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pencil_16 {
+            get {
+                object obj = ResourceManager.GetObject("pencil_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] picture_32 {
+            get {
+                object obj = ResourceManager.GetObject("picture_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] picture_edit_32 {
+            get {
+                object obj = ResourceManager.GetObject("picture_edit_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] picture_edit_64 {
+            get {
+                object obj = ResourceManager.GetObject("picture_edit_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] picture_16 {
+            get {
+                object obj = ResourceManager.GetObject("picture_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pictures_32 {
+            get {
+                object obj = ResourceManager.GetObject("pictures_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] pictures_64 {
+            get {
+                object obj = ResourceManager.GetObject("pictures_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] printer_32 {
+            get {
+                object obj = ResourceManager.GetObject("printer_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] printer_64 {
+            get {
+                object obj = ResourceManager.GetObject("printer_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] redo_32 {
+            get {
+                object obj = ResourceManager.GetObject("redo_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] redo_16 {
+            get {
+                object obj = ResourceManager.GetObject("redo_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -742,9 +1382,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] scanner_48_old {
+        internal static byte[] scanner_96 {
             get {
-                object obj = ResourceManager.GetObject("scanner_48_old", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_96", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -752,9 +1392,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] scanner_64 {
+        internal static byte[] scanner_default_48 {
             get {
-                object obj = ResourceManager.GetObject("scanner_64", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_default_48", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -762,9 +1402,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] scanner_default {
+        internal static byte[] scanner_default_96 {
             get {
-                object obj = ResourceManager.GetObject("scanner_default", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_default_96", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -772,9 +1412,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] scanner_lock {
+        internal static byte[] scanner_gray_32 {
             get {
-                object obj = ResourceManager.GetObject("scanner_lock", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_gray_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -782,9 +1422,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] scanner_lock_default {
+        internal static byte[] scanner_lock_48 {
             get {
-                object obj = ResourceManager.GetObject("scanner_lock_default", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_lock_48", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -792,9 +1432,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] sharpen {
+        internal static byte[] scanner_lock_96 {
             get {
-                object obj = ResourceManager.GetObject("sharpen", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_lock_96", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -802,9 +1442,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] text {
+        internal static byte[] scanner_lock_default_48 {
             get {
-                object obj = ResourceManager.GetObject("text", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_lock_default_48", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -812,9 +1452,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] text_small {
+        internal static byte[] scanner_lock_default_96 {
             get {
-                object obj = ResourceManager.GetObject("text_small", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_lock_default_96", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -822,9 +1462,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] tick {
+        internal static byte[] scanner_wireless_48 {
             get {
-                object obj = ResourceManager.GetObject("tick", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_wireless_48", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -832,9 +1472,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] tick_small {
+        internal static byte[] scanner_wireless_96 {
             get {
-                object obj = ResourceManager.GetObject("tick_small", resourceCulture);
+                object obj = ResourceManager.GetObject("scanner_wireless_96", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -842,9 +1482,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] transform_crop {
+        internal static byte[] shape_align_bottom_32 {
             get {
-                object obj = ResourceManager.GetObject("transform_crop", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_bottom_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -852,9 +1492,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] transform_flip {
+        internal static byte[] shape_align_bottom_16 {
             get {
-                object obj = ResourceManager.GetObject("transform_flip", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_bottom_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -862,9 +1502,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] weather_sun {
+        internal static byte[] shape_align_center_32 {
             get {
-                object obj = ResourceManager.GetObject("weather_sun", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_center_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -872,9 +1512,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] wireless16 {
+        internal static byte[] shape_align_center_16 {
             get {
-                object obj = ResourceManager.GetObject("wireless16", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_center_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -882,9 +1522,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] world {
+        internal static byte[] shape_align_left_32 {
             get {
-                object obj = ResourceManager.GetObject("world", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_left_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -892,9 +1532,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] zoom {
+        internal static byte[] shape_align_left_16 {
             get {
-                object obj = ResourceManager.GetObject("zoom", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_left_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -902,9 +1542,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] zoom_actual {
+        internal static byte[] shape_align_middle_32 {
             get {
-                object obj = ResourceManager.GetObject("zoom_actual", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_middle_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -912,9 +1552,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] zoom_in {
+        internal static byte[] shape_align_middle_16 {
             get {
-                object obj = ResourceManager.GetObject("zoom_in", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_middle_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -922,9 +1562,9 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] zoom_out {
+        internal static byte[] shape_align_right_32 {
             get {
-                object obj = ResourceManager.GetObject("zoom_out", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_right_32", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -932,9 +1572,439 @@ namespace NAPS2 {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] zoom_small {
+        internal static byte[] shape_align_right_16 {
             get {
-                object obj = ResourceManager.GetObject("zoom_small", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_align_right_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] shape_align_top_32 {
+            get {
+                object obj = ResourceManager.GetObject("shape_align_top_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] shape_align_top_16 {
+            get {
+                object obj = ResourceManager.GetObject("shape_align_top_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sharpen_32 {
+            get {
+                object obj = ResourceManager.GetObject("sharpen_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sharpen_16 {
+            get {
+                object obj = ResourceManager.GetObject("sharpen_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] split_32 {
+            get {
+                object obj = ResourceManager.GetObject("split_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] split_hor_32 {
+            get {
+                object obj = ResourceManager.GetObject("split_hor_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] split_hor_16 {
+            get {
+                object obj = ResourceManager.GetObject("split_hor_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] split_16 {
+            get {
+                object obj = ResourceManager.GetObject("split_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] split_ver_32 {
+            get {
+                object obj = ResourceManager.GetObject("split_ver_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] split_ver_16 {
+            get {
+                object obj = ResourceManager.GetObject("split_ver_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] spring_32 {
+            get {
+                object obj = ResourceManager.GetObject("spring_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] spring_16 {
+            get {
+                object obj = ResourceManager.GetObject("spring_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] switch_hor_32 {
+            get {
+                object obj = ResourceManager.GetObject("switch_hor_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] switch_hor_16 {
+            get {
+                object obj = ResourceManager.GetObject("switch_hor_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] switch_ver_32 {
+            get {
+                object obj = ResourceManager.GetObject("switch_ver_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] switch_ver_16 {
+            get {
+                object obj = ResourceManager.GetObject("switch_ver_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] text_32 {
+            get {
+                object obj = ResourceManager.GetObject("text_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] text_align_justify_32 {
+            get {
+                object obj = ResourceManager.GetObject("text_align_justify_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] text_align_justify_16 {
+            get {
+                object obj = ResourceManager.GetObject("text_align_justify_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] text_64 {
+            get {
+                object obj = ResourceManager.GetObject("text_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] text_16 {
+            get {
+                object obj = ResourceManager.GetObject("text_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] thunderbird_32 {
+            get {
+                object obj = ResourceManager.GetObject("thunderbird_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] thunderbird_64 {
+            get {
+                object obj = ResourceManager.GetObject("thunderbird_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tick_32 {
+            get {
+                object obj = ResourceManager.GetObject("tick_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] tick_16 {
+            get {
+                object obj = ResourceManager.GetObject("tick_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] transform_crop_32 {
+            get {
+                object obj = ResourceManager.GetObject("transform_crop_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] transform_crop_16 {
+            get {
+                object obj = ResourceManager.GetObject("transform_crop_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] undo_32 {
+            get {
+                object obj = ResourceManager.GetObject("undo_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] undo_16 {
+            get {
+                object obj = ResourceManager.GetObject("undo_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] weather_sun_32 {
+            get {
+                object obj = ResourceManager.GetObject("weather_sun_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] weather_sun_16 {
+            get {
+                object obj = ResourceManager.GetObject("weather_sun_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] wireless_32 {
+            get {
+                object obj = ResourceManager.GetObject("wireless_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] wireless_16 {
+            get {
+                object obj = ResourceManager.GetObject("wireless_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] world_32 {
+            get {
+                object obj = ResourceManager.GetObject("world_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] world_64 {
+            get {
+                object obj = ResourceManager.GetObject("world_64", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_32 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_actual_32 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_actual_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_actual_16 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_actual_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_in_32 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_in_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_in_16 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_in_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_out_32 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_out_32", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_out_16 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_out_16", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] zoom_16 {
+            get {
+                object obj = ResourceManager.GetObject("zoom_16", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -30,6 +30,11 @@ public class UpdateChecker : IUpdateChecker
     {
         var json = await GetJson(UPDATE_CHECK_ENDPOINT);
         var currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
+        return GetUpdateInfo(json, currentVersion, UPDATE_FILE_EXT);
+    }
+
+    internal static UpdateInfo? GetUpdateInfo(JObject json, Version? currentVersion, string fileExt)
+    {
         foreach (var release in json.Value<JArray>("versions")!)
         {
             var versionName = release.Value<string>("name")!;
@@ -41,15 +46,15 @@ public class UpdateChecker : IUpdateChecker
             var gteVersion = gte != null ? ParseVersion(gte) : null;
             if (gteVersion != null && currentVersion < gteVersion) continue;
 
-            var updateFile = release["files"]!.Value<JToken>(UPDATE_FILE_EXT);
+            var updateFile = release["files"]!.Value<JToken>(fileExt);
             if (updateFile == null) continue;
 
-            var sha1 = updateFile.Value<string>("sha1");
-            var sig = updateFile.Value<string>("sig");
-            if (sha1 == null || sig == null) continue;
+            var sha256 = updateFile.Value<string>("sha256");
+            var sig256 = updateFile.Value<string>("sig256");
+            if (sha256 == null || sig256 == null) continue;
 
-            return new UpdateInfo(versionName, updateFile.Value<string>("url")!, Convert.FromBase64String(sha1),
-                Convert.FromBase64String(sig));
+            return new UpdateInfo(versionName, updateFile.Value<string>("url")!, Convert.FromBase64String(sha256),
+                Convert.FromBase64String(sig256));
         }
         return null;
     }
@@ -62,7 +67,7 @@ public class UpdateChecker : IUpdateChecker
         return op;
     }
 
-    private Version ParseVersion(string name)
+    private static Version ParseVersion(string name)
     {
         return Version.Parse(name.Replace("b", "."));
     }

@@ -1,3 +1,4 @@
+using Eto.Drawing;
 using Eto.Forms;
 
 namespace NAPS2.EtoForms;
@@ -23,6 +24,20 @@ public class ActionCommand : Command
         {
             ToolBarText = value;
             MenuText = value;
+            TextChanged?.Invoke(this, EventArgs.Empty);
         }
+    }
+
+    public event EventHandler? TextChanged;
+
+    public string? IconName { get; set; }
+
+    public Image? GetIconImage(IconScenario scenario, float scale)
+    {
+        if (Image != null)
+        {
+            return Image.Clone().ResizeTo((int) (scenario.ToSize() * scale));
+        }
+        return IconName != null ? EtoPlatform.Current.IconProvider.GetIcon(IconName, scenario, scale) : null;
     }
 }

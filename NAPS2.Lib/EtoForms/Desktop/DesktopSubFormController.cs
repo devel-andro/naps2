@@ -1,5 +1,4 @@
 using NAPS2.EtoForms.Ui;
-using NAPS2.Images;
 using NAPS2.Ocr;
 
 namespace NAPS2.EtoForms.Desktop;
@@ -20,16 +19,37 @@ public class DesktopSubFormController : IDesktopSubFormController
         _tesseractLanguageManager = tesseractLanguageManager;
     }
 
+    private Func<ListSelection<UiImage>>? SelectionFunc { get; init; }
+
+    private ListSelection<UiImage> Selection => SelectionFunc?.Invoke() ?? _imageList.Selection;
+
+    public IDesktopSubFormController WithSelection(Func<ListSelection<UiImage>> selectionFunc)
+    {
+        return new DesktopSubFormController(_formFactory, _imageList, _desktopImagesController,
+            _tesseractLanguageManager)
+        {
+            SelectionFunc = selectionFunc
+        };
+    }
+
     public void ShowCropForm() => ShowImageForm<CropForm>();
     public void ShowBrightnessContrastForm() => ShowImageForm<BrightContForm>();
     public void ShowHueSaturationForm() => ShowImageForm<HueSatForm>();
     public void ShowBlackWhiteForm() => ShowImageForm<BlackWhiteForm>();
     public void ShowSharpenForm() => ShowImageForm<SharpenForm>();
+    public void ShowCompressForm() => ShowImageForm<CompressForm>();
+    public void ShowSplitForm() => ShowImageForm<SplitForm>();
     public void ShowRotateForm() => ShowImageForm<RotateForm>();
+
+    public void ShowCombineForm()
+    {
+        if (_imageList.Images.Count < 2) return;
+        ShowImageForm<CombineForm>();
+    }
 
     private void ShowImageForm<T>() where T : ImageFormBase
     {
-        var selection = _imageList.Selection;
+        var selection = Selection;
         if (selection.Any())
         {
             var form = _formFactory.Create<T>();
@@ -37,6 +57,11 @@ public class DesktopSubFormController : IDesktopSubFormController
             form.SelectedImages = selection.ToList();
             form.ShowModal();
         }
+    }
+
+    public void ShowManualDuplexForm()
+    {
+        _formFactory.Create<ManualDuplexForm>().ShowModal();
     }
 
     public void ShowProfilesForm()
@@ -69,9 +94,15 @@ public class DesktopSubFormController : IDesktopSubFormController
         form.ShowModal();
     }
 
+    public void ShowScannerSharingForm()
+    {
+        var form = _formFactory.Create<ScannerSharingForm>();
+        form.ShowModal();
+    }
+
     public void ShowViewerForm()
     {
-        var selected = _imageList.Selection.FirstOrDefault();
+        var selected = Selection.FirstOrDefault();
         if (selected != null)
         {
             using var viewer = _formFactory.Create<PreviewForm>();
@@ -80,28 +111,25 @@ public class DesktopSubFormController : IDesktopSubFormController
         }
     }
 
-    public void ShowPdfSettingsForm()
-    {
-        _formFactory.Create<PdfSettingsForm>().ShowModal();
-    }
+    public void ShowPdfSettingsForm() => ShowSettingsForm<PdfSettingsPanel>();
 
-    public void ShowImageSettingsForm()
-    {
-        _formFactory.Create<ImageSettingsForm>().ShowModal();
-    }
+    public void ShowImageSettingsForm() => ShowSettingsForm<ImageSettingsPanel>();
 
-    public void ShowEmailSettingsForm()
+    public void ShowEmailSettingsForm() => ShowSettingsForm<EmailSettingsPanel>();
+
+    public void ShowSettingsForm() => ShowSettingsForm<GeneralSettingsPanel>();
+
+    public void ShowToolbarSettingsForm() => ShowSettingsForm<ToolbarSettingsPanel>();
+
+    private void ShowSettingsForm<T>() where T : SettingsPanel
     {
-        _formFactory.Create<EmailSettingsForm>().ShowModal();
+        var form = _formFactory.Create<CombinedSettingsForm>();
+        form.SelectPanel<T>();
+        form.ShowModal();
     }
 
     public void ShowAboutForm()
     {
         _formFactory.Create<AboutForm>().ShowModal();
-    }
-
-    public void ShowSettingsForm()
-    {
-        // FormFactory.Create<FSettings>().ShowDialog();
     }
 }

@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>Scanerul selectat este deconectat.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>A fost întreruptă comunicarea cu dispozitivul de scanare.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -28,7 +31,7 @@
     <value>Nu a fost găsit nici un dispozitiv scaner.</value>
   </data>
   <data name="UnknownDriverError" xml:space="preserve">
-    <value>A apărut o eroare la driver-ul de scanare..</value>
+    <value>A apărut o eroare la driver-ul de scanare.</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Versiune {0}</value>
@@ -41,9 +44,6 @@
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Nici o foaie in alimentator.</value>
-  </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Nu aveţi permisiunea să copiaţi conţinut din fisierul '{0}'.</value>
   </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>Scanerul selectat nu suportă funcția duplex. Dacă scanerul are totuși duplex, atunci încercați alt driver.</value>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Scanerul se inițializează.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>The SANE driver is not available. Make sure to install the required packages:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>Motorul OCR nu este disponibil. Asigură-te că ai instalat pachetul necesar.:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Driver-ul selectat nu este suportat de acest sistem..</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>A apărut o eroare la rularea OCR.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>Operațiunea OCR a expirat.</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>Procesul worker s-a oprit neașteptat.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>Procesul worker s-a oprit neașteptat. Verificați Windows event viewer.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Scaner necunoscut</value>
   </data>
 </root>

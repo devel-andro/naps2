@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>Ali ste prepričani, da želite izbrisati {0} elementov?</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>Ali ste prepričani, da želite izbrisati {0} profilov?</value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>Ali ste prepričani, da želite izbrisati profil {0}?</value>
   </data>
@@ -51,17 +48,8 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>Bitmap datoteke (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Enhanced Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Exchangeable Image File (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>GIF File (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
-    <value>JPEG File (*.jpg, *.jpeg)</value>
+    <value>Datoteka JPEG (*.jpg, *.jpeg)</value>
   </data>
   <data name="FileTypePdf" xml:space="preserve">
     <value>PDF Dokument (*.pdf)</value>
@@ -73,7 +61,7 @@
     <value>TIFF Datoteka (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>Datoteka JPEG2000 (*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>Manjka ime.</value>
@@ -108,18 +96,6 @@
   <data name="EmailError" xml:space="preserve">
     <value>Pri pošiljanju pošte je prišlo do napake.</value>
   </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>Namestitev Zaključena</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>Namestitev zaključena. Želite ponovno zagnati NAPS2?</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>Namestitev spodletela.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>Namestitev Spodletela</value>
-  </data>
   <data name="AllCount" xml:space="preserve">
     <value>Vse ({0})</value>
   </data>
@@ -137,9 +113,6 @@
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>Datoteke '{0}' ni bilo mogoče uvoziti.</value>
-  </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>Datoteke '{0}' ni bilo mogoče uvoziti. Uvožene so lahko samo PDF datoteke narejene v NAPS2.</value>
   </data>
   <data name="DownloadError" xml:space="preserve">
     <value>Napaka med prenosom</value>
@@ -171,26 +144,17 @@
   <data name="ActiveOperations" xml:space="preserve">
     <value>Opravilo v teku</value>
   </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>Skeniram stran {0}</value>
-  </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Izbran skener ne podpira avtomatskega podajalnika. Če skener vsebuje avtomatski podajalnik, poizkusite z drugim gonilnikom.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>V podajalniku ni listov.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Nimate pravic za kopiranje vsebine iz datoteke '{0}'.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>Pri shranjevanju datoteke je prišlo do napake.</value>
   </data>
-  <data name="OfN" xml:space="preserve">
-    <value>od {0}</value>
-  </data>
   <data name="BatchError" xml:space="preserve">
-    <value>Med zaporednim skeniranjem je prišlo do napake.</value>
+    <value>Med zaporednim skeniranjem je prišlo do neznane napake.</value>
   </data>
   <data name="BatchStatusCancelled" xml:space="preserve">
     <value>Zaporedno skeniranje preklicano.</value>
@@ -294,9 +258,6 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Skener se ogreva.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>Na voljo je posodobitev za OCR.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Slika shranjena.</value>
   </data>
@@ -310,7 +271,7 @@
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>Ali ste prepričani, da želite izbrisati "{0}"?</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>Datoteke ni bilo mogoče prepisati, ker je odprta v drugem programu.</value>
@@ -321,14 +282,8 @@
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>Potek Poravnave</value>
   </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>Potreben prenos</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>Za uvoz te PDF datoteke je potrebna dodatna komponenta. Jo želite prenesti sedaj?</value>
-  </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
-    <value>Prekini zaporedno skeniranje?</value>
+    <value>Ali želite prekiniti zaporedno skeniranje?</value>
   </data>
   <data name="CancelBatch" xml:space="preserve">
     <value>Prekliči paket</value>
@@ -339,11 +294,11 @@
   <data name="DonatePrompt" xml:space="preserve">
     <value>NAPS2 je popolnoma brezplačen. Razmislite o donaciji.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>SANE gonilnik ni na voljo. Preverite namestitev potrebnega dodatka:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Pustite oceno</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>OCR ni na voljo. Preverite namestitev potrebnega dodatka:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Vam je NAPS2 všeč?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Izbran gonilnik ni na voljo v tem sistemu.</value>
@@ -367,7 +322,7 @@
     <value>Preverjanje...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>Preverjanje posodobitev je onemogočeno.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
     <value>Med nameščanjem posodobitve je prišlo do napake.</value>

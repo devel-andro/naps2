@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>آیا مطمئنید که می‌خواهید آیتم {0} حذف کنید؟</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>آیا مطمئنید که می‌خواهید پروفایل {0} را حذف کنید؟</value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>آیا مطمئنید که می‌خواهید پروفایل {0} را حذف کنید؟</value>
   </data>
@@ -50,15 +47,6 @@
   </data>
   <data name="FileTypeBmp" xml:space="preserve">
     <value>پرونده Bitmap (*.bmp)</value>
-  </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Enhanced Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Exchangeable Image File (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>پرونده GIF (*.gif)</value>
   </data>
   <data name="FileTypeJpeg" xml:space="preserve">
     <value>پرونده JPEG (*.jpg, *.jpeg)</value>
@@ -108,18 +96,6 @@
   <data name="EmailError" xml:space="preserve">
     <value>هنگام تلاش برای ارسال پست الکترونیکی خطایی رخ داد.</value>
   </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>نصب تمام شد</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>نصب تمام شد. آیا می‌خواهید NAPS2 دوباره راه اندازی گردد؟</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>نصب شکست خورد.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>نصب شکست خورد</value>
-  </data>
   <data name="AllCount" xml:space="preserve">
     <value>همه ({0})</value>
   </data>
@@ -137,9 +113,6 @@
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>پرونده '{0}' را نمی‌توان وارد کرد.</value>
-  </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>پروندهٔ '{0}' را نمی‌توان درون‌ریزی کرد. فقط پرونده‌های ایجاد شده بوسیله NAPS2 را می‌توان درون‌ریزی کرد..</value>
   </data>
   <data name="DownloadError" xml:space="preserve">
     <value>خطای بارگیری</value>
@@ -171,26 +144,17 @@
   <data name="ActiveOperations" xml:space="preserve">
     <value>عملیات در حال پیش‌روی است</value>
   </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>اسکن صفحه {0}</value>
-  </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>اسکنر انتخاب شده استفاده از خوراک‌دهنده را پشتیبانی نمی‌کند. اگر اسکنر شما خوراک‌دهنده دارد تلاش کنید از درایور دیگری استفاده کنید.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>کاغذی داخل خوراک‌دهنده نیست.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>شما اجاره کپی محتویات از داخل پرونده '{0}' را ندارید.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>هنگام تلاش برای ذخیره کردن این پرونده خطایی رخ داد.</value>
   </data>
-  <data name="OfN" xml:space="preserve">
-    <value>از {0}</value>
-  </data>
   <data name="BatchError" xml:space="preserve">
-    <value>خطای ناشناخته‌ای هنگام اسکن دسته‌ای.</value>
+    <value>An unknown error occurred during the batch scan.</value>
   </data>
   <data name="BatchStatusCancelled" xml:space="preserve">
     <value>اسکن دسته‌ای لغو شد.</value>
@@ -286,7 +250,7 @@
     <value>اسکنر انتخابی مشغول است.</value>
   </data>
   <data name="DeviceCoverOpen" xml:space="preserve">
-    <value>درب اسکنر باز است.</value>
+    <value>در اسکنر باز است.</value>
   </data>
   <data name="DevicePaperJam" xml:space="preserve">
     <value>کاغذ داخل اسکنر گیر کرده است.</value>
@@ -294,38 +258,29 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>اسکنر در حال گرم شدن است.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>یک بروزرسانی برای OCR موجود است..</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>تصویر ذخیره شد.</value>
   </data>
   <data name="ImagesSaved" xml:space="preserve">
-    <value>{0} تصویر ذخیره شد..</value>
+    <value>{0} تصویر ذخیره شد.</value>
   </data>
   <data name="PdfSaved" xml:space="preserve">
-    <value>PDF ذخیره شد..</value>
+    <value>PDF ذخیره شد.</value>
   </data>
   <data name="NamedPageSizeFormat" xml:space="preserve">
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>آیا مطمئنید که می‌خواهید {0} حذف کنید؟</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
-    <value>پرونده قابل بازنویسی نیست زیاد در حال استفاده است..</value>
+    <value>پرونده قابل بازنویسی نیست چون در حال استفاده است.</value>
   </data>
   <data name="AutoDeskewing" xml:space="preserve">
     <value>مرتب‌سازی...</value>
   </data>
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>مرتب‌سازی درحال اجراست</value>
-  </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>به دانلود نیاز است</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>برای درون‌ریزی این پرونده PDF به کامپونت جدیدی نیاز است. آیا مایل به دانلود آن هستید؟</value>
   </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
     <value>آیا مطمئنید که می‌خواهید اسکن دسته‌ای را لغو کنید؟</value>
@@ -337,16 +292,16 @@
     <value>کمک مالی</value>
   </data>
   <data name="DonatePrompt" xml:space="preserve">
-    <value>NAPS2 کاملا رایگان است. کمک مالی کنید..</value>
+    <value>NAPS2 کاملا رایگان است. کمک مالی را در نظر داشته باشید.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>درایور SANE موجود نیست. مطمئن شوید بسته‌های مورد نیاز را نصب کرده‌اید.:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Leave a Review</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>موتور OCR در دسترس نیست. مطمئن شوید بسته‌های مورد نیاز را نصب کرده‌اید.:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Like NAPS2?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
-    <value>درایور انتخابیدر این سیستم قابل استفاده نیست..</value>
+    <value>درایور انتخابی در این سیستم قابل استفاده نیست.</value>
   </data>
   <data name="OcrProgress" xml:space="preserve">
     <value>در حال اجرای OCR</value>
@@ -364,13 +319,13 @@
     <value>هیچ بروزرسانی‌ای موجود نیست.</value>
   </data>
   <data name="CheckingForUpdates" xml:space="preserve">
-    <value>درحال بررسی......</value>
+    <value>درحال بررسی...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
     <value>Update checking is disabled.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
-    <value>خطایی هنگام تلاش برای بروزرسانی رخ داد..</value>
+    <value>خطایی هنگام تلاش برای نصب بروزرسانی رخ داد.</value>
   </data>
   <data name="Install" xml:space="preserve">
     <value>نصب {0}</value>
@@ -379,7 +334,7 @@
     <value>یک بروزرسانی موجود است.</value>
   </data>
   <data name="AuthError" xml:space="preserve">
-    <value>خطایی هنگام تلاش برای احراز هویت رخ داد..</value>
+    <value>خطایی هنگام تلاش برای احراز هویت رخ داد.</value>
   </data>
   <data name="UploadingEmail" xml:space="preserve">
     <value>بارگزاری ایمیل...</value>

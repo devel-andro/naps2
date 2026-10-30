@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>{0} Element(e) wirklich löschen?</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>Möchten Sie wirklich {0} Profile löschen?</value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>Soll das Profil {0} wirklich gelöscht werden?</value>
   </data>
@@ -51,15 +48,6 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>Bitmap Datei (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Enhanced Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Exchangeable Image File (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>GIF Datei (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
     <value>JPEG Datei (*.jpg, *.jpeg)</value>
   </data>
@@ -73,7 +61,7 @@
     <value>TIFF Datei (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>JPEG2000 Datei (*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>Name fehlt.</value>
@@ -91,7 +79,7 @@
     <value>Datei überschreiben</value>
   </data>
   <data name="PdfStatus" xml:space="preserve">
-    <value>{0} of {1}</value>
+    <value>{0} von {1}</value>
   </data>
   <data name="ScannedImage" xml:space="preserve">
     <value>Eingelesenes Bild</value>
@@ -107,18 +95,6 @@
   </data>
   <data name="EmailError" xml:space="preserve">
     <value>Beim Versuch eine E-Mail zu senden ist ein Fehler aufgetreten.</value>
-  </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>Installation abgeschlossen</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>Installation abgeschlossen. Soll NAPS2 jetzt neugestartet werden?</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>Installation fehlgeschlagen.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>Installation fehlgeschlagen</value>
   </data>
   <data name="AllCount" xml:space="preserve">
     <value>Alle ({0})</value>
@@ -137,9 +113,6 @@
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>Die Datei '{0}' konnte nicht importiert werden.</value>
-  </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>Die Datei '{0}' konnte nicht importiert werden. Nur PDF-Datein, die mit NAPS2 erstellt wurden, können importiert werden.</value>
   </data>
   <data name="DownloadError" xml:space="preserve">
     <value>Fehler beim Herunterladen</value>
@@ -171,26 +144,17 @@
   <data name="ActiveOperations" xml:space="preserve">
     <value>Verarbeitung läuft</value>
   </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>Seite {0} wird eingescannt</value>
-  </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Der ausgewählte Scanner unterstützt keine Zuführung. Wenn der Scanner eine Zuführung besitzt, probiere einen anderen Treiber.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>In der Zuführung sind keine Seiten.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Fehlende Rechte um den Inhalt der Datei '{0}' zu kopieren.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>Beim Speichern der Datei ist ein Fehler aufgetreten.</value>
   </data>
-  <data name="OfN" xml:space="preserve">
-    <value>von {0}</value>
-  </data>
   <data name="BatchError" xml:space="preserve">
-    <value>Ein unbekannter Fehler ist während der Stapelverarbeitung aufgetreten.</value>
+    <value>Beim Stapel-Scan ist ein unbekannter Fehler aufgetreten.</value>
   </data>
   <data name="BatchStatusCancelled" xml:space="preserve">
     <value>Stapelverarbeitung abgebrochen.</value>
@@ -268,10 +232,10 @@
     <value>Import...</value>
   </data>
   <data name="EmailPdf" xml:space="preserve">
-    <value>Email PDF</value>
+    <value>E-Mail als PDF</value>
   </data>
   <data name="EmailPdfProgress" xml:space="preserve">
-    <value>Email PDF Fortschritt</value>
+    <value>E-Mail PDF Fortschritt</value>
   </data>
   <data name="AutoSaveError" xml:space="preserve">
     <value>Beim automatischen Speichern der Datei ist ein Fehler aufgetreten.</value>
@@ -294,14 +258,11 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Der Scanner wird vorgewärmt.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>Ein Update für OCR ist verfügbar.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Bild gespeichert.</value>
   </data>
   <data name="ImagesSaved" xml:space="preserve">
-    <value>{0} bilder gespeichert.</value>
+    <value>{0} Bilder gespeichert.</value>
   </data>
   <data name="PdfSaved" xml:space="preserve">
     <value>PDF gespeichert.</value>
@@ -310,7 +271,7 @@
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>Sind Sie sicher, dass sie "{0}" löschen möchten?</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>Die Datei konnte nicht überschrieben werden, da sie im Moment verwendet wird.</value>
@@ -321,17 +282,11 @@
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>Fortschritt Schräglagenkorrektur</value>
   </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>Download erforderlich</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>Eine zusätzliche Komponente wird benötigt, um diese PDF-Datei zu importieren. Möchten Sie diese jetzt herunterladen?</value>
-  </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
     <value>Sind Sie sicher, dass Sie den batch-scan abbrechen möchten?</value>
   </data>
   <data name="CancelBatch" xml:space="preserve">
-    <value> Stapelverarbeitung abbrechen</value>
+    <value>Stapelverarbeitung abbrechen</value>
   </data>
   <data name="Donate" xml:space="preserve">
     <value>Spenden</value>
@@ -339,11 +294,11 @@
   <data name="DonatePrompt" xml:space="preserve">
     <value>NAPS2 ist vollständig gratis. Unterstützen Sie uns mit einer Spende.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>Der SANE-Treiber ist nicht verfügbar. Stelle sicher, dass die erforderlichen Pakete installiert sind:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Eine Bewertung hinterlassen</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>Das OCR-Modul ist nicht verfügbar. Stelle sicher, dass das benötigte Paket installiert ist:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Gefällt Ihnen NAPS2?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Der ausgewählte Treiber wird auf diesem System nicht unterstützt.</value>
@@ -367,7 +322,7 @@
     <value>Prüfe...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>Updateprüfung ist deaktiviert.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
     <value>Beim Versuch das Update zu installieren ist ein Fehler aufgetreten.</value>
@@ -391,6 +346,6 @@
     <value>Seite {0} wird eingescannt...</value>
   </data>
   <data name="AcquiringData" xml:space="preserve">
-    <value>Daten erfassen...</value>
+    <value>Datenerfassung...</value>
   </data>
 </root>

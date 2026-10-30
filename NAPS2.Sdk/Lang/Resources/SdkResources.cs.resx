@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>Vybraný skener je vypnutý.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>Komunikace se skenovacím zařízením byla přerušena.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -42,9 +45,6 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>V podavači nejsou žádné papíry.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Nemáte oprávnění kopírovat obsah ze souboru '{0}'.</value>
-  </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>Vybraný skener nepodporuje použití oboustranný mód. Pokud by měl podporovat oboustranný mód, zkuste použít jiný ovladač.</value>
   </data>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Skener se rozehřívá.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>Ovladač SANE není dostupný. Ověřte instalaci požadovaných balíčků:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>OCR není dostupné. Ověřte instalaci požadovaného balíčku:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Vybraný ovladač není na tomto systému podporován.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>Došlo k chybě při běhu OCR.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>Vypršel časový limit operace OCR.</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>Pracovní proces spadl.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>Pracovní proces spadl. Zkontrolujte prohlížeč událostí systému Windows.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Neznámý skener</value>
   </data>
 </root>

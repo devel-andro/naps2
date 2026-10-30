@@ -18,7 +18,7 @@ public class MemoryImageTests : ContextualTests
     public void Save()
     {
         var image = LoadImage(ImageResources.dog);
-        var path = Path.Combine(FolderPath, "test.jpg");
+        var path = P("test.jpg");
         
         image.Save(path, ImageFileFormat.Jpeg);
 
@@ -30,11 +30,11 @@ public class MemoryImageTests : ContextualTests
     public void SaveWithQuality()
     {
         var image = LoadImage(ImageResources.dog);
-        var highQualityPath = Path.Combine(FolderPath, "highq.jpg");
-        var lowQualityPath = Path.Combine(FolderPath, "lowq.jpg");
+        var highQualityPath = P("highq.jpg");
+        var lowQualityPath = P("lowq.jpg");
         
-        image.Save(highQualityPath, ImageFileFormat.Jpeg, 75);
-        image.Save(lowQualityPath, ImageFileFormat.Jpeg, 25);
+        image.Save(highQualityPath, ImageFileFormat.Jpeg, new ImageSaveOptions { Quality = 75 });
+        image.Save(lowQualityPath, ImageFileFormat.Jpeg, new ImageSaveOptions { Quality = 25 });
 
         var highQuality = TestImageContextFactory.Get().Load(highQualityPath);
         var lowQuality = TestImageContextFactory.Get().Load(lowQualityPath);
@@ -42,7 +42,7 @@ public class MemoryImageTests : ContextualTests
         ImageAsserts.Similar(ImageResources.dog, highQuality);
         // Rather than comparing to a reference image (which doesn't work consistently cross-platform), we just assert
         // that we're a little bit off from the original image. i.e. that quality does *something*
-        ImageAsserts.NotSimilar(ImageResources.dog, lowQuality);
+        ImageAsserts.NotSimilar(ImageResources.dog, lowQuality, 2.0);
         ImageAsserts.Similar(ImageResources.dog, lowQuality, 5.0);
     }
 
@@ -50,7 +50,7 @@ public class MemoryImageTests : ContextualTests
     public void SaveToStream()
     {
         var image = LoadImage(ImageResources.dog);
-        var path = Path.Combine(FolderPath, "test.jpg");
+        var path = P("test.jpg");
 
         using var stream = new FileStream(path, FileMode.CreateNew);
         image.Save(stream, ImageFileFormat.Jpeg);
@@ -66,8 +66,8 @@ public class MemoryImageTests : ContextualTests
         var highQualityStream = new MemoryStream();
         var lowQualityStream = new MemoryStream();
 
-        image.Save(highQualityStream, ImageFileFormat.Jpeg, 75);
-        image.Save(lowQualityStream, ImageFileFormat.Jpeg, 25);
+        image.Save(highQualityStream, ImageFileFormat.Jpeg, new ImageSaveOptions { Quality = 75 });
+        image.Save(lowQualityStream, ImageFileFormat.Jpeg, new ImageSaveOptions { Quality = 25 });
 
         var highQuality = TestImageContextFactory.Get().Load(highQualityStream);
         var lowQuality = TestImageContextFactory.Get().Load(lowQualityStream);
@@ -75,7 +75,7 @@ public class MemoryImageTests : ContextualTests
         ImageAsserts.Similar(ImageResources.dog, highQuality);
         // Rather than comparing to a reference image (which doesn't work consistently cross-platform), we just assert
         // that we're a little bit off from the original image. i.e. that quality does *something*
-        ImageAsserts.NotSimilar(ImageResources.dog, lowQuality);
+        ImageAsserts.NotSimilar(ImageResources.dog, lowQuality, 2.0);
         ImageAsserts.Similar(ImageResources.dog, lowQuality, 5.0);
     }
 
@@ -83,7 +83,7 @@ public class MemoryImageTests : ContextualTests
     public void SaveWithUnspecifiedFormatToPng()
     {
         var image = LoadImage(ImageResources.dog);
-        var path = Path.Combine(FolderPath, "test.png");
+        var path = P("test.png");
         
         image.Save(path);
 
@@ -96,7 +96,7 @@ public class MemoryImageTests : ContextualTests
     public void SaveWithUnspecifiedFormatToJpeg()
     {
         var image = LoadImage(ImageResources.dog);
-        var path = Path.Combine(FolderPath, "test.jpg");
+        var path = P("test.jpg");
         
         image.Save(path);
 
@@ -108,9 +108,9 @@ public class MemoryImageTests : ContextualTests
     public void SaveWithUnspecifiedFormatToStream()
     {
         var image = LoadImage(ImageResources.dog);
-        var path = Path.Combine(FolderPath, "test.png");
+        var path = P("test.png");
         
         using var stream = new FileStream(path, FileMode.CreateNew);
-        Assert.Throws<ArgumentException>(() => image.Save(stream, ImageFileFormat.Unspecified));
+        Assert.Throws<ArgumentException>(() => image.Save(stream, ImageFileFormat.Unknown));
     }
 }

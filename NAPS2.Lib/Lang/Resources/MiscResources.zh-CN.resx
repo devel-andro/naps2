@@ -22,13 +22,10 @@
     <value>您确定要清除 {0} 个项目吗？</value>
   </data>
   <data name="ConfirmDeleteItems" xml:space="preserve">
-    <value>您确定要删除{0}个项目吗?</value>
-  </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>您确定要删除{0}个配置吗？</value>
+    <value>您确定要删除{0} 个项目吗?</value>
   </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
-    <value>您确定要删除这个{0}配置吗？</value>
+    <value>您确定要删除这个{0} 配置吗？</value>
   </data>
   <data name="ConfirmOverwriteFile" xml:space="preserve">
     <value>文件 {0} 已存在，是否覆盖？</value>
@@ -51,15 +48,6 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>位图文件 (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>增强的 Windows 图元文件 (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>可交换图像文件 (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>GIF 文件 (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
     <value>JPEG 文件(*.jpg, *.jpeg)</value>
   </data>
@@ -73,7 +61,7 @@
     <value>TIFF 文件 (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>JPEG 文件(*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>请输入配置名称.</value>
@@ -108,20 +96,8 @@
   <data name="EmailError" xml:space="preserve">
     <value>尝试发送邮件时发生错误.</value>
   </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>安装完成</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>安装完成。您需要立即重新启动 NAPS2 吗？</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>安装失败.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>安装失败</value>
-  </data>
   <data name="AllCount" xml:space="preserve">
-    <value>全部 ({0})</value>
+    <value>所有 ({0})</value>
   </data>
   <data name="SelectedCount" xml:space="preserve">
     <value>已选择 ({0})</value>
@@ -138,9 +114,6 @@
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>无法导入文件 '{0}'.</value>
   </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>无法导入文件 '{0}'。 只有 NAPS2 生成的 PDF 才能被导入.</value>
-  </data>
   <data name="DownloadError" xml:space="preserve">
     <value>下载错误</value>
   </data>
@@ -154,7 +127,7 @@
     <value>扫描</value>
   </data>
   <data name="ConfirmResetImages" xml:space="preserve">
-    <value>您确定要撤销您对{0}个图像的修改吗？</value>
+    <value>您确定要撤销您对{0} 个图像的修改吗？</value>
   </data>
   <data name="ResetImage" xml:space="preserve">
     <value>重置图像</value>
@@ -163,7 +136,7 @@
     <value>您有未保存的修改，确定要放弃这些修改并退出吗？</value>
   </data>
   <data name="ExitWithActiveOperations" xml:space="preserve">
-    <value>操作进行中，是否取消操作并退出？</value>
+    <value>一个操作正在进行中。您确定要退出并取消操作吗？</value>
   </data>
   <data name="UnsavedChanges" xml:space="preserve">
     <value>未保存的更改</value>
@@ -171,23 +144,14 @@
   <data name="ActiveOperations" xml:space="preserve">
     <value>正在进行操作</value>
   </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>正在扫描页面 {0}</value>
-  </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>所选的扫描仪不支持使用输稿器。如果您的扫描仪确实有输稿器，请尝试使用不同的驱动程序.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>输稿器中未发现纸张.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>您没有从文件 '{0}' 中复制内容的权限.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>尝试存储文件时发生错误.</value>
-  </data>
-  <data name="OfN" xml:space="preserve">
-    <value>/ {0}</value>
   </data>
   <data name="BatchError" xml:space="preserve">
     <value>批量扫描时发生未知错误.</value>
@@ -294,9 +258,6 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>扫描仪正在预热.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>OCR 有可用的更新.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>图像已保存.</value>
   </data>
@@ -310,7 +271,7 @@
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>您确定要删除“{0}”吗？</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>文件正在使用，无法覆盖.</value>
@@ -320,12 +281,6 @@
   </data>
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>倾斜校正进度</value>
-  </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>需要下载</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>需要额外的组件来导入这个 PDF 文件，您想要现在开始下载吗？</value>
   </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
     <value>您确定要取消批量扫描吗?</value>
@@ -339,11 +294,11 @@
   <data name="DonatePrompt" xml:space="preserve">
     <value>NAPS2 是完全免费的。请考虑捐款资助.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>SANE 驱动不可用。请确认已安装所需的软件包:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>撰写评论</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>OCR 组件不可用。请确认已安装所需的软件包:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>喜欢NAPS2吗？</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>所选驱动程序不受本系统支持.</value>
@@ -367,7 +322,7 @@
     <value>正在检查...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>更新检查已禁用</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
     <value>尝试安装更新时发生错误.</value>

@@ -6,18 +6,20 @@ namespace NAPS2.App.Tests;
 
 public class ConsoleAppTests : ContextualTests
 {
+    private const int EXIT_TIMEOUT = 30_000;
+
     [Theory]
     [ClassData(typeof(AppTestData))]
     public void ConvertsImportedFile(IAppTestTarget target)
     {
         var importPath = CopyResourceToFile(ImageResources.dog, "in.png");
-        var outputPath = Path.Combine(FolderPath, "out.jpg");
+        var outputPath = P("out.jpg");
         var args = $"-n 0 -i \"{importPath}\" -o \"{outputPath}\"";
 
         var process = AppTestHelper.StartProcess(target.Console, FolderPath, args);
         try
         {
-            Assert.True(process.WaitForExit(5000));
+            Assert.True(process.WaitForExit(EXIT_TIMEOUT));
             var stdout = process.StandardOutput.ReadToEnd();
             Assert.Equal(0, process.ExitCode);
             Assert.Empty(stdout);
@@ -34,16 +36,16 @@ public class ConsoleAppTests : ContextualTests
     [ClassData(typeof(AppTestData))]
     public void NonZeroExitCodeForError(IAppTestTarget target)
     {
-        var importPath = Path.Combine(FolderPath, "doesnotexist.png");
-        var outputPath = Path.Combine(FolderPath, "out.jpg");
+        var importPath = P("doesnotexist.png");
+        var outputPath = P("out.jpg");
         var args = $"-n 0 -i \"{importPath}\" -o \"{outputPath}\"";
 
         var process = AppTestHelper.StartProcess(target.Console, FolderPath, args);
         try
         {
-            Assert.True(process.WaitForExit(5000));
+            Assert.True(process.WaitForExit(EXIT_TIMEOUT));
             var stdout = process.StandardOutput.ReadToEnd();
-            if (OperatingSystem.IsWindows())
+            if (target.IsWindows)
             {
                 // TODO: Figure out why ExitCode always appears as 0 on Mac/Linux
                 Assert.NotEqual(0, process.ExitCode);

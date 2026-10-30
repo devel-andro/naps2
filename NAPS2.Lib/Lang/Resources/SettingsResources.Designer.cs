@@ -60,7 +60,34 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Black &amp; White.
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string AppleImpl_Default {
+            get {
+                return ResourceManager.GetString("AppleImpl_Default", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to File Transfer.
+        /// </summary>
+        internal static string AppleImpl_FileTransfer {
+            get {
+                return ResourceManager.GetString("AppleImpl_FileTransfer", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Memory Transfer.
+        /// </summary>
+        internal static string AppleImpl_MemoryTransfer {
+            get {
+                return ResourceManager.GetString("AppleImpl_MemoryTransfer", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Black and White.
         /// </summary>
         internal static string BitDepth_1BlackAndWhite {
             get {
@@ -87,74 +114,11 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 100 dpi.
+        ///   Looks up a localized string similar to {0} dpi.
         /// </summary>
-        internal static string Dpi_100 {
+        internal static string DpiFormat {
             get {
-                return ResourceManager.GetString("Dpi_100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1200 dpi.
-        /// </summary>
-        internal static string Dpi_1200 {
-            get {
-                return ResourceManager.GetString("Dpi_1200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 150 dpi.
-        /// </summary>
-        internal static string Dpi_150 {
-            get {
-                return ResourceManager.GetString("Dpi_150", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 200 dpi.
-        /// </summary>
-        internal static string Dpi_200 {
-            get {
-                return ResourceManager.GetString("Dpi_200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 300 dpi.
-        /// </summary>
-        internal static string Dpi_300 {
-            get {
-                return ResourceManager.GetString("Dpi_300", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 400 dpi.
-        /// </summary>
-        internal static string Dpi_400 {
-            get {
-                return ResourceManager.GetString("Dpi_400", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 600 dpi.
-        /// </summary>
-        internal static string Dpi_600 {
-            get {
-                return ResourceManager.GetString("Dpi_600", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 800 dpi.
-        /// </summary>
-        internal static string Dpi_800 {
-            get {
-                return ResourceManager.GetString("Dpi_800", resourceCulture);
+                return ResourceManager.GetString("DpiFormat", resourceCulture);
             }
         }
         
@@ -164,6 +128,15 @@ namespace NAPS2.Lang.Resources {
         internal static string EmailProvider_NotSelected {
             get {
                 return ResourceManager.GetString("EmailProvider_NotSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apple Mail.
+        /// </summary>
+        internal static string EmailProviderType_AppleMail {
+            get {
+                return ResourceManager.GetString("EmailProviderType_AppleMail", resourceCulture);
             }
         }
         
@@ -186,11 +159,29 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Outlook (new).
+        /// </summary>
+        internal static string EmailProviderType_OutlookNew {
+            get {
+                return ResourceManager.GetString("EmailProviderType_OutlookNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Outlook Web Access.
         /// </summary>
         internal static string EmailProviderType_OutlookWeb {
             get {
                 return ResourceManager.GetString("EmailProviderType_OutlookWeb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thunderbird.
+        /// </summary>
+        internal static string EmailProviderType_Thunderbird {
+            get {
+                return ResourceManager.GetString("EmailProviderType_Thunderbird", resourceCulture);
             }
         }
         
@@ -384,6 +375,51 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom....
+        /// </summary>
+        internal static string Resolution_Custom {
+            get {
+                return ResourceManager.GetString("Resolution_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Always Prompt.
+        /// </summary>
+        internal static string SaveButtonDefaultAction_AlwaysPrompt {
+            get {
+                return ResourceManager.GetString("SaveButtonDefaultAction_AlwaysPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prompt If Selected.
+        /// </summary>
+        internal static string SaveButtonDefaultAction_PromptIfSelected {
+            get {
+                return ResourceManager.GetString("SaveButtonDefaultAction_PromptIfSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save All.
+        /// </summary>
+        internal static string SaveButtonDefaultAction_SaveAll {
+            get {
+                return ResourceManager.GetString("SaveButtonDefaultAction_SaveAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Selected.
+        /// </summary>
+        internal static string SaveButtonDefaultAction_SaveSelected {
+            get {
+                return ResourceManager.GetString("SaveButtonDefaultAction_SaveSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1:1.
         /// </summary>
         internal static string Scale_1_1 {
@@ -420,6 +456,24 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always Prompt.
+        /// </summary>
+        internal static string ScanButtonDefaultAction_AlwaysPrompt {
+            get {
+                return ResourceManager.GetString("ScanButtonDefaultAction_AlwaysPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan With Default Profile.
+        /// </summary>
+        internal static string ScanButtonDefaultAction_ScanWithDefaultProfile {
+            get {
+                return ResourceManager.GetString("ScanButtonDefaultAction_ScanWithDefaultProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Duplex.
         /// </summary>
         internal static string Source_Duplex {
@@ -443,6 +497,33 @@ namespace NAPS2.Lang.Resources {
         internal static string Source_Glass {
             get {
                 return ResourceManager.GetString("Source_Glass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        internal static string Theme_Dark {
+            get {
+                return ResourceManager.GetString("Theme_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string Theme_Default {
+            get {
+                return ResourceManager.GetString("Theme_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        internal static string Theme_Light {
+            get {
+                return ResourceManager.GetString("Theme_Light", resourceCulture);
             }
         }
         
@@ -501,11 +582,20 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternative Transfer.
+        ///   Looks up a localized string similar to Memory Transfer.
         /// </summary>
         internal static string TwainImpl_MemXfer {
             get {
                 return ResourceManager.GetString("TwainImpl_MemXfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Native Transfer.
+        /// </summary>
+        internal static string TwainImpl_NativeXfer {
+            get {
+                return ResourceManager.GetString("TwainImpl_NativeXfer", resourceCulture);
             }
         }
         
@@ -551,6 +641,42 @@ namespace NAPS2.Lang.Resources {
         internal static string WiaVersion_Wia20 {
             get {
                 return ResourceManager.GetString("WiaVersion_Wia20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        internal static string DockStyle_Top {
+            get {
+                return ResourceManager.GetString("DockStyle_Top", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        internal static string DockStyle_Left {
+            get {
+                return ResourceManager.GetString("DockStyle_Left", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string DockStyle_Bottom {
+            get {
+                return ResourceManager.GetString("DockStyle_Bottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        internal static string DockStyle_Right {
+            get {
+                return ResourceManager.GetString("DockStyle_Right", resourceCulture);
             }
         }
     }

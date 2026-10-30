@@ -1,6 +1,7 @@
-using NAPS2.EtoForms;
+﻿using NAPS2.EtoForms;
+using NAPS2.EtoForms.Notifications;
 using NAPS2.ImportExport.Images;
-using NAPS2.ImportExport.Pdf;
+using NAPS2.Pdf;
 using NAPS2.Scan;
 
 namespace NAPS2.ImportExport;
@@ -11,14 +12,17 @@ public class AutoSaver
     private readonly DialogHelper _dialogHelper;
     private readonly OperationProgress _operationProgress;
     private readonly ISaveNotify _notify;
-    private readonly IPdfExporter _pdfExporter;
+    private readonly PdfExporter _pdfExporter;
     private readonly IOverwritePrompt _overwritePrompt;
     private readonly Naps2Config _config;
     private readonly ImageContext _imageContext;
+    private readonly UiImageList _imageList;
+    private readonly NameManager _nameManager;
 
     public AutoSaver(ErrorOutput errorOutput, DialogHelper dialogHelper,
-        OperationProgress operationProgress, ISaveNotify notify, IPdfExporter pdfExporter,
-        IOverwritePrompt overwritePrompt, Naps2Config config, ImageContext imageContext)
+        OperationProgress operationProgress, ISaveNotify notify, PdfExporter pdfExporter,
+        IOverwritePrompt overwritePrompt, Naps2Config config, ImageContext imageContext, UiImageList imageList,
+        NameManager nameManager)
     {
         _errorOutput = errorOutput;
         _dialogHelper = dialogHelper;
@@ -28,6 +32,8 @@ public class AutoSaver
         _overwritePrompt = overwritePrompt;
         _config = config;
         _imageContext = imageContext;
+        _imageList = imageList;
+        _nameManager = nameManager;
     }
 
     public IAsyncEnumerable<ProcessedImage> Save(AutoSaveSettings settings, IAsyncEnumerable<ProcessedImage> images)
@@ -39,12 +45,10 @@ public class AutoSaver
             {
                 await foreach (var img in images)
                 {
-                    // TODO: We should assume the returned sink may dispose what we give it, therefore we should make
-                    // a clone before sending it out, and then dispose the clone when we're done with it
                     imageList.Add(img);
                     if (!settings.ClearImagesAfterSaving)
                     {
-                        produceImage(img);
+                        produceImage(img.Clone());
                     }
                 }
             }
@@ -58,6 +62,13 @@ public class AutoSaver
                         produceImage(img);
                     }
                 }
+                else
+                {
+                    foreach (var img in imageList)
+                    {
+                        img.Dispose();
+                    }
+                }
             }
         });
     }
@@ -67,21 +78,26 @@ public class AutoSaver
         try
         {
             bool ok = true;
-            var placeholders = Placeholders.All.WithDate(DateTime.Now);
-            int i = 0;
             string? firstFileSaved = null;
-            var scans = SaveSeparatorHelper.SeparateScans(new[] { images }, settings.Separator).ToList();
-            foreach (var imageList in scans)
+            var scans = SaveSeparatorHelper.SeparateScans(new[] { images }, settings.Separator)
+                .Where(x => x.Count > 0).ToList();
+            var saveParams = new SaveParams { OverwriteMode = OverwriteMode.Never, OpenEndedSequence = true };
+            foreach (var (imagesToSave, i) in scans.Select((x, i) => (x, i)))
             {
-                (bool success, string? filePath) =
-                    await SaveOneFile(settings, placeholders, i++, imageList, scans.Count == 1);
-                if (!success)
+                (bool success, string? filePath) = await SaveOneFile(settings, saveParams with { BatchIndex = i },
+                    imagesToSave, doNotify: scans.Count == 1);
+                if (success)
+                {
+                    // Normally we're supposed to take the CurrentState before the save operation starts, but that
+                    // doesn't really work here since populating the UiImageList happens asynchronously so the images
+                    // we're saving might not be present yet. In practice waiting until after saving will ensure the
+                    // list is populated so that this logic works correctly.
+                    _imageList.MarkSaved(_imageList.CurrentState, imagesToSave);
+                    firstFileSaved ??= filePath;
+                }
+                else
                 {
                     ok = false;
-                }
-                if (success && firstFileSaved == null)
-                {
-                    firstFileSaved = filePath;
                 }
             }
             // TODO: Shouldn't this give duplicate notifications?
@@ -101,46 +117,52 @@ public class AutoSaver
         }
     }
 
-    private async Task<(bool, string?)> SaveOneFile(AutoSaveSettings settings, Placeholders placeholders, int i,
+    private async Task<(bool, string?)> SaveOneFile(AutoSaveSettings settings, SaveParams saveParams,
         List<ProcessedImage> images, bool doNotify)
     {
-        if (images.Count == 0)
-        {
-            return (true, null);
-        }
-        string subPath = placeholders.Substitute(settings.FilePath, true, i);
+        string path = settings.FilePath;
         if (settings.PromptForFilePath)
         {
-            if (_dialogHelper.PromptToSavePdfOrImage(subPath, out string? newPath))
+            // The dialog handles conflicts itself, so the default is just the configured name with placeholders filled in
+            var defaultPath = _nameManager.Get(path, new NameContext { DateTime = saveParams.DateTime });
+            string? newPath = null!;
+            if (Invoker.Current.InvokeGet(() => _dialogHelper.PromptToSavePdfOrImage(defaultPath, out newPath)))
             {
-                subPath = placeholders.Substitute(newPath!, true, i);
+                path = newPath!;
+                // The user chose (and confirmed overwriting) this exact name, so it shouldn't be numbered as part of
+                // the sequence
+                saveParams = saveParams with
+                {
+                    OverwriteMode = OverwriteMode.Confirmed,
+                    OpenEndedSequence = false,
+                    BatchIndex = null
+                };
+            }
+            else
+            {
+                return (false, null);
             }
         }
-        // TODO: This placeholder handling is complex and wrong in some cases (e.g. FilePerScan with ext = "jpg")
-        // TODO: Maybe have initial placeholders that replace date, then rely on the ops to increment the file num
-        var extension = Path.GetExtension(subPath);
-        if (extension != null && extension.Equals(".pdf", StringComparison.InvariantCultureIgnoreCase))
+        var extension = Path.GetExtension(_nameManager.Get(path, NameContext.FromSaveParams(saveParams)));
+        if (extension.Equals(".pdf", StringComparison.InvariantCultureIgnoreCase))
         {
-            if (File.Exists(subPath))
-            {
-                subPath = placeholders.Substitute(subPath, true, 0, 1);
-            }
-            var op = new SavePdfOperation(_pdfExporter, _overwritePrompt);
-            if (op.Start(subPath, placeholders, images, _config.Get(c => c.PdfSettings), _config.DefaultOcrParams()))
+            var op = new SavePdfOperation(_pdfExporter, _overwritePrompt, _nameManager);
+            if (op.Start(path, images, _config.Get(c => c.PdfSettings), _config.DefaultOcrParams(),
+                    saveParams: saveParams))
             {
                 _operationProgress.ShowProgress(op);
             }
             bool success = await op.Success;
-            if (success && doNotify)
+            if (success && doNotify && op.FirstFileSaved != null)
             {
-                _notify.PdfSaved(subPath);
+                _notify.PdfSaved(op.FirstFileSaved);
             }
-            return (success, subPath);
+            return (success, op.FirstFileSaved);
         }
         else
         {
-            var op = new SaveImagesOperation(_overwritePrompt, _imageContext);
-            if (op.Start(subPath, placeholders, images, _config.Get(c => c.ImageSettings)))
+            var op = new SaveImagesOperation(_overwritePrompt, _imageContext, _nameManager);
+            if (op.Start(path, images, _config.Get(c => c.ImageSettings), saveParams))
             {
                 _operationProgress.ShowProgress(op);
             }
@@ -149,7 +171,7 @@ public class AutoSaver
             {
                 _notify.ImagesSaved(images.Count, op.FirstFileSaved);
             }
-            return (success, subPath);
+            return (success, op.FirstFileSaved);
         }
     }
 }

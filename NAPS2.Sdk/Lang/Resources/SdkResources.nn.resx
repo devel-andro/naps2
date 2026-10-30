@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>Den valde skannaren er fråkopla.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>Kommunikasjon med skannaren vart avbroten.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -42,9 +45,6 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Der er ingen ark i mataren.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Du har ikkje løyve til å kopiera innhald frå fila '{0}'.</value>
-  </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>Den valde skannaren støtter ikkje tosidig. Hvis skannaren din skal støtta tosidig, prøv å bruka ein annan driver.</value>
   </data>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Skannaren varmer opp.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>SANE-drivaren er ikkje tilgjengeleg. Installer den nødvendige pakken:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>OCR-motoren er ikkje tilgjengeleg. Installer den nødvendige pakken:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Den valde drivaren er ikkje støtta på dette systemet.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>An error occurred running OCR.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>The OCR operation timed out.</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>Arbeidsprosessen krasja.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>Arbeidsprosessen krasja Sjekk Windows-hendingsvisaren.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Ukjent skanner</value>
   </data>
 </root>

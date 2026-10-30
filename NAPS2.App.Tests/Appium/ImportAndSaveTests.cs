@@ -10,7 +10,7 @@ namespace NAPS2.App.Tests.Appium;
 [Collection("appium")]
 public class ImportAndSaveTests : AppiumTests
 {
-    [VerifyTheory(AllowDebug = true)]
+    [VerifyTheory(AllowDebug = true, WindowsAppium = true)]
     [ClassData(typeof(AppiumTestData))]
     public void ImportVariousAndSavePdfWithOcr(IAppTestTarget target)
     {
@@ -19,7 +19,7 @@ public class ImportAndSaveTests : AppiumTests
         CopyResourceToFile(PdfResources.word_patcht_pdf, "patcht.pdf");
         CopyResourceToFile(PdfResources.image_pdf, "image.pdf");
         CopyResourceToFile(BinaryResources.ocr_test, "text.jpg");
-        var tessdata = Path.Combine(FolderPath, "components", "tesseract4", "fast");
+        var tessdata = P("components", "tesseract4", "fast");
         Directory.CreateDirectory(tessdata);
         CopyResourceToFile(BinaryResources.eng_traineddata, tessdata, "eng.traineddata");
         
@@ -34,16 +34,15 @@ public class ImportAndSaveTests : AppiumTests
         
         ClickAtName("Save PDF");
         ResetMainWindow();
-        var fileNameElements = _session.FindElementsByName("File name:");
-        var fileTextBox = fileNameElements.Last();
+        var fileTextBox = WaitFor(() => _session.FindElementsByName("File name:").Last());
         ClickAt(fileTextBox);
         fileTextBox.SendKeys("test.pdf");
         ClickAtName("Save");
         // Wait for the save to finish
         Thread.Sleep(100);
-        WaitUntilGone("Cancel", 10_000);
+        WaitFor(() => !HasElementWithName("Cancel"), 30_000);
 
-        var path = Path.Combine(FolderPath, "test.pdf");
+        var path = P("test.pdf");
         PdfAsserts.AssertImages(path, 
             PdfResources.word_p1,
             PdfResources.word_p2,

@@ -1,24 +1,27 @@
 ﻿using System.Threading;
+using NAPS2.Dependencies;
 using NAPS2.EtoForms;
 using NAPS2.ImportExport;
 using NAPS2.ImportExport.Email;
 using NAPS2.ImportExport.Images;
-using NAPS2.ImportExport.Pdf;
 using NAPS2.Lang.ConsoleResources;
 using NAPS2.Ocr;
+using NAPS2.Pdf;
 using NAPS2.Recovery;
 using NAPS2.Scan;
+using NAPS2.Scan.Exceptions;
+using NAPS2.Scan.Internal;
 using NAPS2.Serialization;
 
 namespace NAPS2.Automation;
 
-public class AutomatedScanning
+internal class AutomatedScanning
 {
     private readonly ImageContext _imageContext;
     private readonly IEmailProviderFactory _emailProviderFactory;
     private readonly IScanPerformer _scanPerformer;
     private readonly ErrorOutput _errorOutput;
-    private readonly IScannedImageImporter _scannedImageImporter;
+    private readonly FileImporter _fileImporter;
     private readonly IOperationFactory _operationFactory;
     private readonly TesseractLanguageManager _tesseractLanguageManager;
     private readonly IFormFactory _formFactory;
@@ -26,22 +29,28 @@ public class AutomatedScanning
     private readonly IProfileManager _profileManager;
     private readonly RecoveryStorageManager _recoveryStorageManager;
     private readonly ScanningContext _scanningContext;
+    private readonly IScanBridgeFactory _scanBridgeFactory;
+    private readonly NameManager _nameManager;
 
     private readonly ConsoleOutput _output;
     private readonly AutomatedScanningOptions _options;
+    private readonly CancellationTokenSource _cts = new();
     private PdfEncryption _parsedEncryptConfigOption = null!;
     private List<List<ProcessedImage>> _scanList = null!;
     private int _pagesScanned;
     private int _totalPagesScanned;
-    private Placeholders _placeholders = null!;
+    private SaveParams _saveParams = null!;
+    private NameContext _nameContext = null!;
     private List<string> _actualOutputPaths = null!;
     private OcrParams _ocrParams = null!;
+    private PageDimensions? _pageDimensions;
 
     public AutomatedScanning(ConsoleOutput output, AutomatedScanningOptions options, ImageContext imageContext,
         IScanPerformer scanPerformer, ErrorOutput errorOutput, IEmailProviderFactory emailProviderFactory,
-        IScannedImageImporter scannedImageImporter, IOperationFactory operationFactory,
+        FileImporter fileImporter, IOperationFactory operationFactory,
         TesseractLanguageManager tesseractLanguageManager, IFormFactory formFactory, Naps2Config config,
-        IProfileManager profileManager, RecoveryStorageManager recoveryStorageManager, ScanningContext scanningContext)
+        IProfileManager profileManager, RecoveryStorageManager recoveryStorageManager, ScanningContext scanningContext,
+        IScanBridgeFactory scanBridgeFactory, NameManager nameManager)
     {
         _output = output;
         _options = options;
@@ -49,7 +58,7 @@ public class AutomatedScanning
         _scanPerformer = scanPerformer;
         _errorOutput = errorOutput;
         _emailProviderFactory = emailProviderFactory;
-        _scannedImageImporter = scannedImageImporter;
+        _fileImporter = fileImporter;
         _operationFactory = operationFactory;
         _tesseractLanguageManager = tesseractLanguageManager;
         _formFactory = formFactory;
@@ -57,6 +66,8 @@ public class AutomatedScanning
         _profileManager = profileManager;
         _recoveryStorageManager = recoveryStorageManager;
         _scanningContext = scanningContext;
+        _scanBridgeFactory = scanBridgeFactory;
+        _nameManager = nameManager;
     }
 
     public IEnumerable<ProcessedImage> AllImages => _scanList.SelectMany(x => x);
@@ -71,6 +82,15 @@ public class AutomatedScanning
 
     public async Task Execute()
     {
+        Console.CancelKeyPress += (_, e) =>
+        {
+            if (!_cts.IsCancellationRequested)
+            {
+                Console.WriteLine(ConsoleResources.Cancelling);
+                _cts.Cancel();
+                e.Cancel = true;
+            }
+        };
         bool hasUnexpectedException = false;
         try
         {
@@ -79,15 +99,25 @@ public class AutomatedScanning
                 return;
             }
 
-            _placeholders = Placeholders.All.WithDate(DateTime.Now);
+            _saveParams = new SaveParams
+            {
+                OverwriteMode = _options.ForceOverwrite ? OverwriteMode.Force : OverwriteMode.Prompt
+            };
+            _nameContext = NameContext.FromSaveParams(_saveParams);
 
             if (_options.Install != null)
             {
-                InstallComponents();
+                await InstallComponents();
                 if (_options.OutputPath == null && _options.EmailFileName == null && !_options.AutoSave)
                 {
                     return;
                 }
+            }
+
+            if (_options.ListDevices)
+            {
+                await ListDevices();
+                return;
             }
 
             if (!PreCheckOverwriteFile())
@@ -95,12 +125,14 @@ public class AutomatedScanning
                 return;
             }
 
-            _scanList = new List<List<ProcessedImage>>();
+            _scanList = [];
 
             if (_options.ImportPath != null)
             {
                 await ImportImages();
             }
+
+            if (_cts.IsCancellationRequested) return;
 
             ConfigureOcr();
 
@@ -110,9 +142,14 @@ public class AutomatedScanning
                 {
                     return;
                 }
-
+                if (!await SetProfileOverrides(profile))
+                {
+                    return;
+                }
                 await PerformScan(profile);
             }
+
+            if (_cts.IsCancellationRequested) return;
 
             ReorderScannedImages();
 
@@ -126,11 +163,20 @@ public class AutomatedScanning
                 await EmailScannedImages();
             }
         }
+        catch (ScanDriverException ex) when (ex is not ScanDriverUnknownException)
+        {
+            _output.Writer.WriteLine(ex.Message);
+        }
         catch (Exception ex)
         {
             hasUnexpectedException = true;
             Log.FatalException("An error occurred that caused the console application to close.", ex);
             _output.Writer.WriteLine(ConsoleResources.UnexpectedError);
+            _output.Writer.WriteLine(ex.Message);
+            if (ex.InnerException != null)
+            {
+                _output.Writer.WriteLine(ex.InnerException.Message);
+            }
         }
         finally
         {
@@ -148,6 +194,11 @@ public class AutomatedScanning
 
     private void ConfigureOcr()
     {
+        if (_options.NoProfile)
+        {
+            // Don't use OCR-enabled settings from the GUI if --noprofile is set
+            _config.Run.Set(c => c.EnableOcr, false);
+        }
         bool canUseOcr = IsPdfFile(_options.OutputPath) || IsPdfFile(_options.EmailFileName);
         if (!canUseOcr)
         {
@@ -161,48 +212,64 @@ public class AutomatedScanning
         {
             _config.Run.Set(c => c.EnableOcr, true);
         }
-        _config.Run.Set(c => c.OcrLanguageCode, _options.OcrLang);
+        if (!string.IsNullOrEmpty(_options.OcrLang))
+        {
+            _config.Run.Set(c => c.OcrLanguageCode, _options.OcrLang);
+        }
         _ocrParams = _config.DefaultOcrParams();
     }
 
-    private void InstallComponents()
+    private async Task InstallComponents()
     {
-        // TODO: Extract out a DownloadController from FDownloadProgress and use that
-        throw new NotImplementedException();
+        var availableComponents = new List<IExternalComponent>();
+        availableComponents.AddRange(_tesseractLanguageManager.LanguageComponents);
 
-        // var availableComponents = new List<IExternalComponent>();
-        // availableComponents.AddRange(_tesseractLanguageManager.LanguageComponents);
-        //
-        // var componentDict = availableComponents.ToDictionary(x => x.Id.ToLowerInvariant());
-        // var installId = _options.Install!.ToLowerInvariant();
-        // if (!componentDict.TryGetValue(installId, out var toInstall))
-        // {
-        //     _output.Writer.WriteLine(ConsoleResources.ComponentNotAvailable);
-        //     return;
-        // }
-        // if (toInstall.IsInstalled)
-        // {
-        //     _output.Writer.WriteLine(ConsoleResources.ComponentAlreadyInstalled);
-        //     return;
-        // }
-        // // Using a form here is not ideal (since this is supposed to be a console app), but good enough for now
-        // // Especially considering wia/twain often show forms anyway
-        // var progressForm = _formFactory.Create<FDownloadProgress>();
-        // if (toInstall.Id.StartsWith("ocr-", StringComparison.InvariantCulture) &&
-        //     componentDict.TryGetValue("ocr", out var ocrExe) && !ocrExe.IsInstalled)
-        // {
-        //     progressForm.QueueFile(ocrExe);
-        //     if (_options.Verbose)
-        //     {
-        //         _output.Writer.WriteLine(ConsoleResources.Installing, ocrExe.Id);
-        //     }
-        // }
-        // progressForm.QueueFile(toInstall);
-        // if (_options.Verbose)
-        // {
-        //     _output.Writer.WriteLine(ConsoleResources.Installing, toInstall.Id);
-        // }
-        // progressForm.ShowDialog();
+        var componentDict = availableComponents.ToDictionary(x => x.Id.ToLowerInvariant());
+        var installId = _options.Install!.ToLowerInvariant();
+        if (!componentDict.TryGetValue(installId, out var toInstall))
+        {
+            _output.Writer.WriteLine(ConsoleResources.ComponentNotAvailable);
+            return;
+        }
+        if (toInstall.IsInstalled)
+        {
+            _output.Writer.WriteLine(ConsoleResources.ComponentAlreadyInstalled);
+            return;
+        }
+        var downloadController = new DownloadController(_scanningContext);
+        if (toInstall.Id.StartsWith("ocr-", StringComparison.InvariantCulture) &&
+            componentDict.TryGetValue("ocr", out var ocrExe) && !ocrExe.IsInstalled)
+        {
+            downloadController.QueueFile(ocrExe);
+            if (_options.Verbose)
+            {
+                _output.Writer.WriteLine(ConsoleResources.Installing, ocrExe.Id);
+            }
+        }
+        downloadController.QueueFile(toInstall);
+        if (_options.Verbose)
+        {
+            _output.Writer.WriteLine(ConsoleResources.Installing, toInstall.Id);
+        }
+        downloadController.DownloadError += (_, _) =>
+        {
+            _errorOutput.DisplayError(MiscResources.FilesCouldNotBeDownloaded);
+        };
+        await downloadController.StartDownloadsAsync();
+    }
+
+    private async Task ListDevices()
+    {
+        var profile = new ScanProfile
+        {
+            DriverName = ScanPerformer.SystemDefaultDriverName
+        };
+        await SetProfileOverrides(profile);
+
+        await foreach (var device in _scanPerformer.GetDevices(profile, _cts.Token))
+        {
+            _output.Writer.WriteLine(device.Name);
+        }
     }
 
     private void ReorderScannedImages()
@@ -216,7 +283,7 @@ public class AutomatedScanning
         foreach (var scan in _scanList)
         {
             // To take advantage of the existing mutation logic we wrap the scan in a UiImageList then copy it back
-            var imageList = new UiImageList(scan.Select(x => new UiImage(x)).ToList());
+            var imageList = UiImageList.FromImages(scan.Select(x => new UiImage(x)).ToList());
 
             if (_options.AltDeinterleave)
             {
@@ -252,7 +319,7 @@ public class AutomatedScanning
             // Email, so no check needed
             return true;
         }
-        var subPath = _placeholders.Substitute(_options.OutputPath);
+        var subPath = _nameManager.Get(_options.OutputPath, _nameContext);
         if (IsPdfFile(subPath)
             && File.Exists(subPath)
             && !_options.ForceOverwrite)
@@ -284,9 +351,9 @@ public class AutomatedScanning
                         PatchTOnly = true
                     }
                 };
-                await foreach (var image in _scannedImageImporter.Import(actualPath, importParams))
+                await foreach (var image in _fileImporter.Import(actualPath, importParams, _cts.Token))
                 {
-                    scan.Add(image);
+                    scan.Add(PostProcessImportedImage(image));
                 }
                 _scanList.Add(scan);
             }
@@ -306,6 +373,22 @@ public class AutomatedScanning
         }
     }
 
+    private ProcessedImage PostProcessImportedImage(ProcessedImage image)
+    {
+        // We separate post-processing for scanned images (as part of the scanning pipeline) and imported images (here).
+        // The reason is that post-processing affects OCR, which runs as part of the scanning pipeline.
+        if (_options.RotateDegrees != null)
+        {
+            image = image.WithTransform(new RotationTransform(_options.RotateDegrees.Value), true);
+        }
+        if (_options.Deskew)
+        {
+            using var rendered = image.Render();
+            image = image.WithTransform(Deskewer.GetDeskewTransform(rendered), true);
+        }
+        return image;
+    }
+
     private async Task EmailScannedImages()
     {
         if (_scanList.Count == 0)
@@ -319,8 +402,8 @@ public class AutomatedScanning
 
         var message = new EmailMessage
         {
-            Subject = _placeholders.Substitute(_options.EmailSubject, false) ?? "",
-            BodyText = _placeholders.Substitute(_options.EmailBody, false),
+            Subject = _nameManager.Get(_options.EmailSubject, _nameContext with { IsFilePath = false }) ?? "",
+            BodyText = _nameManager.Get(_options.EmailBody, _nameContext with { IsFilePath = false }),
             AutoSend = _options.EmailAutoSend,
             SilentSend = _options.EmailSilentSend
         };
@@ -329,6 +412,7 @@ public class AutomatedScanning
         message.Recipients.AddRange(EmailRecipient.FromText(EmailRecipientType.Cc, _options.EmailCc));
         message.Recipients.AddRange(EmailRecipient.FromText(EmailRecipientType.Bcc, _options.EmailBcc));
 
+        // TODO: We may want to normalize this to use SavePdfOperation's email functionality
         var tempFolder = new DirectoryInfo(Path.Combine(Paths.Temp, Path.GetRandomFileName()));
         tempFolder.Create();
         try
@@ -340,13 +424,18 @@ public class AutomatedScanning
                 {
                     // The scan has already been exported to PDF, so use that file
                     OutputVerbose(ConsoleResources.AttachingExportedPDF);
-                    int digits = (int) Math.Floor(Math.Log10(_scanList.Count)) + 1;
+                    var context = NameContext.FromSaveParams(_saveParams with { BatchCount = _scanList.Count })
+                        with { IsFilePath = false };
                     int i = 0;
                     foreach (var path in _actualOutputPaths)
                     {
-                        string attachmentName = _placeholders.Substitute(_options.EmailFileName!, false, i++,
-                            _scanList.Count > 1 ? digits : 0);
-                        message.Attachments.Add(new EmailAttachment(path, attachmentName));
+                        string attachmentName = _nameManager.Get(_options.EmailFileName!,
+                            context with { BatchIndex = i++ });
+                        message.Attachments.Add(new EmailAttachment
+                        {
+                            FilePath = path,
+                            AttachmentName = attachmentName
+                        });
                     }
                 }
                 else
@@ -374,7 +463,7 @@ public class AutomatedScanning
             }
 
             OutputVerbose(ConsoleResources.SendingEmail);
-            if (await _emailProviderFactory.Default.SendEmail(message))
+            if (await _emailProviderFactory.Default.SendEmail(message, _cts.Token))
             {
                 OutputVerbose(ConsoleResources.EmailSent);
             }
@@ -391,10 +480,14 @@ public class AutomatedScanning
 
     private void AttachFilesInFolder(DirectoryInfo folder, EmailMessage message)
     {
-        foreach (var file in folder.EnumerateFiles())
+        foreach (var file in folder.EnumerateFiles().OrderBy(x => x.Name))
         {
             OutputVerbose(ConsoleResources.Attaching, file.Name);
-            message.Attachments.Add(new EmailAttachment(file.FullName, file.Name));
+            message.Attachments.Add(new EmailAttachment
+            {
+                FilePath = file.FullName,
+                AttachmentName = file.Name
+            });
         }
     }
 
@@ -402,7 +495,7 @@ public class AutomatedScanning
     {
         // Most validation is done by the CommandLineParser library, but some constraints that can't be represented by that API need to be checked here
         if (_options.OutputPath == null && _options.EmailFileName == null && _options.Install == null &&
-            !_options.AutoSave)
+            !_options.AutoSave && !_options.ListDevices)
         {
             _errorOutput.DisplayError(ConsoleResources.OutputOrEmailRequired);
             return false;
@@ -411,6 +504,37 @@ public class AutomatedScanning
         {
             _errorOutput.DisplayError(ConsoleResources.OutputOrEmailRequiredForImport);
             return false;
+        }
+
+        if ((_options.Device != null || _options.ListDevices) && _options.Driver == null)
+        {
+            _errorOutput.DisplayError(string.Format(ConsoleResources.DriverRequired, SupportedDriversString));
+            return false;
+        }
+
+        if (_options.Driver != null)
+        {
+            if (ScanPerformer.ParseDriver(_options.Driver) == Driver.Default)
+            {
+                _errorOutput.DisplayError(string.Format(ConsoleResources.InvalidDriver, SupportedDriversString));
+                return false;
+            }
+        }
+
+        if (_options.PageSize != null)
+        {
+            var pageSize = PageSize.Parse(_options.PageSize);
+            if (pageSize == null)
+            {
+                _errorOutput.DisplayError(ConsoleResources.CouldntParsePageSize);
+                return false;
+            }
+            _pageDimensions = new PageDimensions
+            {
+                Width = pageSize.Width,
+                Height = pageSize.Height,
+                Unit = (LocalizedPageSizeUnit) pageSize.Unit
+            };
         }
 
         if (new[] { _options.Interleave, _options.Deinterleave, _options.AltInterleave, _options.AltDeinterleave }
@@ -436,6 +560,9 @@ public class AutomatedScanning
 
         return true;
     }
+
+    private string SupportedDriversString => string.Join(", ",
+        ScanOptionsValidator.SupportedDrivers.Select(x => x.ToString().ToLowerInvariant()));
 
     private async Task ExportScannedImages()
     {
@@ -465,7 +592,7 @@ public class AutomatedScanning
 
     private async Task ExportToImageFiles()
     {
-        var path = _placeholders.Substitute(_options.OutputPath!);
+        var path = _nameManager.Get(_options.OutputPath!, _nameContext);
         await DoExportToImageFiles(_options.OutputPath!);
         OutputVerbose(ConsoleResources.FinishedSavingImages, Path.GetFullPath(path));
     }
@@ -480,9 +607,13 @@ public class AutomatedScanning
                 : TiffCompression.Auto
         });
 
+        var imageSettings = _config.Get(c => c.ImageSettings);
+        int fileCount = _scanList.Sum(scan => SaveImagesOperation.GetFileCount(outputPath, scan.Count, imageSettings));
+        int fileIndex = 0;
         foreach (var scan in _scanList)
         {
             var op = _operationFactory.Create<SaveImagesOperation>();
+            _cts.Token.Register(op.Cancel);
             int i = -1;
             op.StatusChanged += (sender, args) =>
             {
@@ -492,8 +623,10 @@ public class AutomatedScanning
                     i = op.Status.CurrentProgress;
                 }
             };
-            op.Start(outputPath, _placeholders, scan, _config.Get(c => c.ImageSettings));
+            op.Start(outputPath, scan, imageSettings,
+                _saveParams with { BatchCount = fileCount, BatchIndex = fileIndex });
             await op.Success;
+            fileIndex += SaveImagesOperation.GetFileCount(outputPath, scan.Count, imageSettings);
         }
     }
 
@@ -506,6 +639,7 @@ public class AutomatedScanning
     {
         var defaults = InternalDefaults.GetCommonConfig();
 
+        _config.Run.Set(c => c.PdfSettings.SinglePagePdfs, false);
         if (!_options.UseSavedMetadata)
         {
             _config.Run.Set(c => c.PdfSettings.Metadata, defaults.PdfSettings.Metadata);
@@ -560,27 +694,27 @@ public class AutomatedScanning
         }
         _config.Run.Set(c => c.PdfSettings.Compat, compat);
 
-        int scanIndex = 0;
-        _actualOutputPaths = new List<string>();
-        foreach (var fileContents in _scanList)
+        _actualOutputPaths = [];
+        foreach (var (fileContents, scanIndex) in _scanList.Select((x, i) => (x, i)))
         {
             var op = _operationFactory.Create<SavePdfOperation>();
+            _cts.Token.Register(op.Cancel);
             int i = -1;
             op.StatusChanged += (sender, args) =>
             {
-                if (op.Status.CurrentProgress > i)
+                if (op.Status.CurrentProgress > i && op.Status.CurrentProgress < op.Status.MaxProgress)
                 {
                     OutputVerbose(ConsoleResources.ExportingPage, op.Status.CurrentProgress + 1, fileContents.Count);
                     i = op.Status.CurrentProgress;
                 }
             };
-            int digits = (int) Math.Floor(Math.Log10(_scanList.Count)) + 1;
-            string actualPath = _placeholders.Substitute(path, true, scanIndex++, _scanList.Count > 1 ? digits : 0);
-            op.Start(actualPath, _placeholders, fileContents, _config.Get(c => c.PdfSettings), _ocrParams, email, null);
+            op.Start(path, fileContents, _config.Get(c => c.PdfSettings), _ocrParams,
+                saveParams: _saveParams with { BatchCount = _scanList.Count, BatchIndex = scanIndex });
             if (!await op.Success)
             {
                 return false;
             }
+            var actualPath = op.FirstFileSaved!;
             _actualOutputPaths.Add(actualPath);
             if (!email)
             {
@@ -608,14 +742,30 @@ public class AutomatedScanning
         _totalPagesScanned = 0;
         foreach (int i in Enumerable.Range(1, _options.Number))
         {
-            if (_options.Delay > 0)
+            if (i > 1 || !_options.FirstNow)
             {
-                OutputVerbose(ConsoleResources.Waiting, _options.Delay);
-                Thread.Sleep(_options.Delay);
+                if (_options.WaitScan)
+                {
+                    OutputVerbose(OperatingSystem.IsWindows()
+                        ? ConsoleResources.PressEnterToScanWindows
+                        : ConsoleResources.PressEnterToScan);
+                    var input = Console.ReadLine();
+                    if (input == null)
+                    {
+                        // Ctrl+D or Ctrl+Z then Enter (EOF) detected - stop scanning and save
+                        OutputVerbose(ConsoleResources.StoppingScan);
+                        break;
+                    }
+                }
+                if (_options.Delay > 0)
+                {
+                    OutputVerbose(ConsoleResources.Waiting, _options.Delay);
+                    Thread.Sleep(_options.Delay);
+                }
             }
             OutputVerbose(ConsoleResources.StartingScan, i, _options.Number);
             _pagesScanned = 0;
-            _scanList.Add(new List<ProcessedImage>());
+            _scanList.Add([]);
             var scanParams = new ScanParams
             {
                 NoUI = !_options.Progress,
@@ -623,7 +773,7 @@ public class AutomatedScanning
                 DetectPatchT = _options.SplitPatchT,
                 OcrParams = _ocrParams
             };
-            await foreach (var image in _scanPerformer.PerformScan(profile, scanParams))
+            await foreach (var image in _scanPerformer.PerformScan(profile, scanParams, cancelToken: _cts.Token))
             {
                 ReceiveScannedImage(image);
             }
@@ -635,18 +785,27 @@ public class AutomatedScanning
     {
         try
         {
-            if (_options.ProfileName == null)
+            if (_options.NoProfile)
             {
-                // If no profile is specified, use the default (if there is one)
-                profile = _profileManager.Profiles.Single(x => x.IsDefault);
+                profile = new ScanProfile { Version = ScanProfile.CURRENT_VERSION };
             }
-            else
+            else if (_options.ProfileName != null)
             {
                 // Use the profile with the specified name (try case-sensitive first, then case-insensitive)
                 profile = _profileManager.Profiles.FirstOrDefault(x => x.DisplayName == _options.ProfileName) ??
                           _profileManager.Profiles.First(x =>
                               x.DisplayName.ToLower() == _options.ProfileName.ToLower());
             }
+            else
+            {
+                // If no profile is specified, use the default (if there is one)
+                profile = _profileManager.Profiles.FirstOrDefault(x => x.IsDefault) ??
+                          new ScanProfile { Version = ScanProfile.CURRENT_VERSION };
+            }
+            // If we have any profile overrides we do not want to risk persisting changes back to the main profile.
+            // It shouldn't happen anyway as we shouldn't call ProfileManager.Save, but this provides a level of
+            // protection against that.
+            profile = profile.Clone();
         }
         catch (InvalidOperationException)
         {
@@ -654,6 +813,75 @@ public class AutomatedScanning
             profile = null!;
             return false;
         }
+        return true;
+    }
+
+    private async Task<bool> SetProfileOverrides(ScanProfile profile)
+    {
+        if (!string.IsNullOrEmpty(_options.Driver))
+        {
+            var driver = ScanPerformer.ParseDriver(_options.Driver);
+            profile.DriverName = driver.ToString().ToLowerInvariant();
+        }
+        if (_options.Source != null)
+        {
+            profile.PaperSource = _options.Source.Value;
+        }
+        if (_pageDimensions != null)
+        {
+            profile.PageSize = ScanPageSize.Custom;
+            profile.CustomPageSize = _pageDimensions;
+        }
+        if (_options.Dpi != null)
+        {
+            profile.Resolution.Dpi = _options.Dpi.Value;
+        }
+        if (_options.BitDepth != null)
+        {
+            profile.BitDepth = _options.BitDepth switch
+            {
+                ConsoleBitDepth.Color => ScanBitDepth.C24Bit,
+                ConsoleBitDepth.Gray => ScanBitDepth.Grayscale,
+                ConsoleBitDepth.Bw => ScanBitDepth.BlackWhite,
+                _ => ScanBitDepth.C24Bit
+            };
+        }
+        if (_options.Deskew)
+        {
+            profile.AutoDeskew = true;
+        }
+        if (_options.RotateDegrees != null)
+        {
+            profile.RotateDegrees = _options.RotateDegrees.Value;
+        }
+
+        if (!string.IsNullOrEmpty(_options.Device))
+        {
+            var cts = new CancellationTokenSource();
+            bool foundDevice = false;
+            await foreach (var device in _scanPerformer.GetDevices(profile, cts.Token))
+            {
+                if (device.ID == _options.Device || device.Name.ContainsInvariantIgnoreCase(_options.Device!))
+                {
+                    cts.Cancel();
+                    profile.Device = new ScanProfileDevice(device.ID, device.Name);
+                    foundDevice = true;
+                    break;
+                }
+            }
+            if (!foundDevice)
+            {
+                _errorOutput.DisplayError(SdkResources.DeviceNotFound);
+                return false;
+            }
+        }
+
+        if (!_options.ListDevices && profile.Device == null)
+        {
+            _errorOutput.DisplayError(ConsoleResources.NoDeviceSpecified);
+            return false;
+        }
+
         return true;
     }
 

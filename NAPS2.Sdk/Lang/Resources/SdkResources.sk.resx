@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>Vybraný skener je offline.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>Komunikácia so skenovacím zariadením bola prerušená.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -34,16 +37,13 @@
     <value>Verzia {0}</value>
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
-    <value>Súbor '{0}' sa nemožno importovať.</value>
+    <value>Súbor '{0}' nemožno importovať.</value>
   </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Vybraný skener nepodporuje použitie podávača. Ak skener obsahuje podávač, skúste použiť iný ovládač.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>V podávači nie sú žiadne listy.</value>
-  </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Nemáte povolenie na kopírovanie obsahu zo súboru '{0}'.</value>
   </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>Vybraný skener neskenuje obojstranne. Ak sa v parametroch skenera uvádza, že ho podporuje, potom treba nájsť iný ovládač.</value>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Skener sa zahrieva.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>Ovládač SANE nie je k dispozícii. Preverte požadované balíky pre inštaláciu:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>Mechanizmus OCR nie je k dispozícii. Určite preverte požadovaný balík pre inštaláciu:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Vybraný ovládač nie je v tomto systéme podporovaný.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>Pri spustení OCR došlo k chybe.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>Čas OCR operácie vypršal.</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>Pracovný proces spadol.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>Pracovný proces spadol. Skontrolujte prehliadač udalostí systému Windows.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Unknown Scanner</value>
   </data>
 </root>

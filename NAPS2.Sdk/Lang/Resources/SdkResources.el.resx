@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>Ο επιλεγμένος σαρωτής βρίσκεται εκτός σύνδεσης (offline).</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>Communication with the scanning device was interrupted.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -42,9 +45,6 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Δεν υπάρχουν σελίδες στον τροφοδότη.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Δεν υπάρχει δικαίωμα αντιγραφής περιεχομένου από το αρχείο '{0}'.</value>
-  </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>Ο επιλεγμένος σαρωτής δεν υποστηρίζει λειτουργία διπλής όψης. Εάν ο σαρωτής πράγματι διαθέτει λειτουργία διπλής όψης, προτείνεται η χρήση διαφορετικού οδηγού.</value>
   </data>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Προθέρμανση σαρωτή.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>The SANE driver is not available. Make sure to install the required packages:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>The OCR engine is not available. Make sure to install the required package:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
-    <value>The selected driver is not supported on this system.</value>
+    <value>Ο επιλεγμένος οδηγός δεν υποστηρίζεται σε αυτό το σύστημα.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>Σφάλμα κατά την εκτέλεση της OCR.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>Εξέπνευσε ο χρόνος για την λειτουργία OCR.</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>The worker process crashed.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>The worker process crashed. Check the Windows event viewer.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Unknown Scanner</value>
   </data>
 </root>

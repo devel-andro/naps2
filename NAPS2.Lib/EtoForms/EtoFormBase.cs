@@ -9,12 +9,12 @@ public abstract class EtoFormBase : Form, IFormBase
 
     protected EtoFormBase(Naps2Config config)
     {
-        EtoPlatform.Current.UpdateRtl(this);
         Config = config;
         FormStateController = new FormStateController(this, config);
         Resizable = true;
         LayoutController.Bind(this);
         LayoutController.Invalidated += (_, _) => FormStateController.UpdateLayoutSize(LayoutController);
+        EtoPlatform.Current.InitForm(this);
     }
 
     protected abstract void BuildLayout();
@@ -36,4 +36,14 @@ public abstract class EtoFormBase : Form, IFormBase
     }
         
     public Naps2Config Config { get; set; }
+
+    public string IconName
+    {
+        set
+        {
+            var iconProvider = EtoPlatform.Current.IconProvider;
+            EtoPlatform.Current.AttachDpiDependency(this,
+                scale => Icon = iconProvider.GetIcon(value, IconScenario.Inline16, scale) is { } icon ? iconProvider.ToFormIcon(icon) : null);
+        }
+    }
 }

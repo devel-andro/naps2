@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>Сигурни ли сте, че искате да изтриете {0} обект(а)?</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>Сигурни ли сте, че искате да изтриете профила {0}?</value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>Сигурни ли сте, че искате да изтриете профилa {0}?</value>
   </data>
@@ -51,15 +48,6 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>Bitmap файл (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Подобрен Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Exchangeable Image File (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>GIF файл (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
     <value>JPEG файл (*.jpg, *.jpeg)</value>
   </data>
@@ -73,7 +61,7 @@
     <value>TIFF файл (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>JPEG-2000 файл (*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>Липсва име.</value>
@@ -97,7 +85,7 @@
     <value>Сканирано изображение</value>
   </data>
   <data name="SelectProfileBeforeScan" xml:space="preserve">
-    <value>Изберете профил преди да натиснете \"Сканиране\".</value>
+    <value>Изберете профил преди да натиснете "Сканиране".</value>
   </data>
   <data name="UnknownDriverError" xml:space="preserve">
     <value>Проблем с драйвъра на скенера.</value>
@@ -107,18 +95,6 @@
   </data>
   <data name="EmailError" xml:space="preserve">
     <value>Грешка при изпращане на имейл.</value>
-  </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>Инсталацията е завършена</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>Инсталацията е завършена. Искате ли да рестартирате NAPS2 сега?</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>Неуспешна инсталация.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>Неуспешна инсталация</value>
   </data>
   <data name="AllCount" xml:space="preserve">
     <value>Всички ({0})</value>
@@ -137,9 +113,6 @@
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>Файлът '{0}' не може да бъде внесен.</value>
-  </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>Файлът '{0}' не може да бъде внесен. Само PDF файлове, създадени от NAPS2, могат да бъдат внесени.</value>
   </data>
   <data name="DownloadError" xml:space="preserve">
     <value>Грешка при сваляне</value>
@@ -163,16 +136,13 @@
     <value>Има незаписани промени. Сигурни ли сте, че искате да затворите програмата и да отхвърлите тези промени?</value>
   </data>
   <data name="ExitWithActiveOperations" xml:space="preserve">
-    <value>An operation is in progress. Are you sure you want to exit and cancel the operation?</value>
+    <value>Операцията е в развитие. Сигурни ли сте, че искате да излезете и да отмените операцията?</value>
   </data>
   <data name="UnsavedChanges" xml:space="preserve">
     <value>Незаписани промени</value>
   </data>
   <data name="ActiveOperations" xml:space="preserve">
-    <value>Operation in Progress</value>
-  </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>Сканиране на страница {0}</value>
+    <value>Операцията е в ход</value>
   </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Избраният скенер не поддържа автоматично подаване на листове. Ако вашият скенер има устройство за автоматично подаване на листове, опитайте различен драйвър..</value>
@@ -180,17 +150,11 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Няма листoве в устройството за подаване.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Нямате разрешение да копирате съдържание от файл '{0}'.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>Възникна грешка при опит за запис на файла.</value>
   </data>
-  <data name="OfN" xml:space="preserve">
-    <value>от {0}</value>
-  </data>
   <data name="BatchError" xml:space="preserve">
-    <value>Възникна неизвестна грешка при групово сканиране.</value>
+    <value>Възникна неизвестна грешка по време на груповото сканиране.</value>
   </data>
   <data name="BatchStatusCancelled" xml:space="preserve">
     <value>Груповата задача е отменена.</value>
@@ -294,9 +258,6 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Подготовка на скенера.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>Наличен е ъпдейт за OCR модула.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Изображението е записано.</value>
   </data>
@@ -310,22 +271,16 @@
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>Сигурни ли сте, че искате да изтриете {0}?</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>Файлът не може да бъде презаписан, защото в момента се ползва.</value>
   </data>
   <data name="AutoDeskewing" xml:space="preserve">
-    <value>Deskewing...</value>
+    <value>Изправяне...</value>
   </data>
   <data name="AutoDeskewProgress" xml:space="preserve">
-    <value>Deskew Progress</value>
-  </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>Download Needed</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>An additional component is needed to import this PDF file. Would you like to download it now?</value>
+    <value>Напредък на изправянето</value>
   </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
     <value>Сигурен ли сте, че искате да прекъснете поточното сканиране?</value>
@@ -334,58 +289,58 @@
     <value>Спри групата</value>
   </data>
   <data name="Donate" xml:space="preserve">
-    <value>Donate</value>
+    <value>Даряване</value>
   </data>
   <data name="DonatePrompt" xml:space="preserve">
-    <value>NAPS2 is completely free. Consider making a donation.</value>
+    <value>NAPS2 е напълно безплатен. Обмислете дарение.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>The SANE driver is not available. Make sure to install the required packages:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Напишете отзив</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>The OCR engine is not available. Make sure to install the required package:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Харесвате ли NAPS2?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
-    <value>The selected driver is not supported on this system.</value>
+    <value>Избраният драйвер не се поддържа от тази система.</value>
   </data>
   <data name="OcrProgress" xml:space="preserve">
-    <value>OCR Progress</value>
+    <value>Напредък на оптичното разпознаване</value>
   </data>
   <data name="RunningOcr" xml:space="preserve">
-    <value>Running OCR...</value>
+    <value>Започва оптичното разпознаване...</value>
   </data>
   <data name="UpdateProgress" xml:space="preserve">
-    <value>Update Progress</value>
+    <value>Напредък на актуализацията</value>
   </data>
   <data name="Updating" xml:space="preserve">
-    <value>Updating...</value>
+    <value>Актуализиране...</value>
   </data>
   <data name="NoUpdates" xml:space="preserve">
-    <value>No updates available.</value>
+    <value>Няма налични актуализации.</value>
   </data>
   <data name="CheckingForUpdates" xml:space="preserve">
     <value>Проверяване...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>Проверката за актуализация е деактивирана.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
-    <value>An error occured when trying to install the update.</value>
+    <value>Грешка при опит за инталация на обновление.</value>
   </data>
   <data name="Install" xml:space="preserve">
-    <value>Install {0}</value>
+    <value>Инсталиране {0}</value>
   </data>
   <data name="UpdateAvailable" xml:space="preserve">
     <value>Налично обновяване.</value>
   </data>
   <data name="AuthError" xml:space="preserve">
-    <value>An error occurred when trying to authorize.</value>
+    <value>Възникна грешка при опит за упълномощаване.</value>
   </data>
   <data name="UploadingEmail" xml:space="preserve">
-    <value>Uploading email...</value>
+    <value>Качване на имейл...</value>
   </data>
   <data name="ErrorEmailing" xml:space="preserve">
-    <value>An error occurred when trying to send the email.</value>
+    <value>Възникна грешка при опит за изпращане на имейла.</value>
   </data>
   <data name="ScanProgressPage" xml:space="preserve">
     <value>Сканиране на страница {0}...</value>

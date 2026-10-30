@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>Opravdu si přejete smazat položky {0}?</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>Jste si jisti, že chcete smazat profily {0}? </value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>Jste si jisti, že chcete smazat profil {0}?</value>
   </data>
@@ -51,17 +48,8 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>Soubory Bitmap (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Rozšířený Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Soubor ExIF (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>Soubor GIF (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
-    <value>Soubor JPEG (*.jpg, *.jpeg) </value>
+    <value>Soubor JPEG (*.jpg, *.jpeg)</value>
   </data>
   <data name="FileTypePdf" xml:space="preserve">
     <value>PDF dokument (*.pdf)</value>
@@ -73,7 +61,7 @@
     <value>Soubor TIFF (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>Soubor JPEG2000 (*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>Název chybí.</value>
@@ -108,18 +96,6 @@
   <data name="EmailError" xml:space="preserve">
     <value>Při pokusu o odeslání e-mailu došlo k chybě.</value>
   </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>Instalace dokončena</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>Instalace dokončena. Chcete nyní restartovat NAPS2?</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>Instalace selhala.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>Instalace selhala</value>
-  </data>
   <data name="AllCount" xml:space="preserve">
     <value>Vše ({0})</value>
   </data>
@@ -137,9 +113,6 @@
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>Soubor '{0}' nelze importovat.</value>
-  </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>Soubor '{0}' nelze importovat. Importovány mohou být poze soubory PDF vytvořené NAPS2.</value>
   </data>
   <data name="DownloadError" xml:space="preserve">
     <value>Chyba stahování</value>
@@ -171,23 +144,14 @@
   <data name="ActiveOperations" xml:space="preserve">
     <value>Probíhá operace</value>
   </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>Skenuje se stránka {0}</value>
-  </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Vybraný skener nepodporuje použití podavače. Pokud váš skener má podavač, zkuste použít jiný ovladač.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>V podavači nejsou žádné papíry.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Nemáte oprávnění kopírovat obsah ze souboru '{0}'.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>Při pokusu o uložení souboru došlo k chybě.</value>
-  </data>
-  <data name="OfN" xml:space="preserve">
-    <value>z {0}</value>
   </data>
   <data name="BatchError" xml:space="preserve">
     <value>Během dávkového skenování došlo k chybě.</value>
@@ -294,9 +258,6 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Skener se rozehřívá.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>Je k dispozici aktualizace OCR.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Obrázek uložen.</value>
   </data>
@@ -307,10 +268,10 @@
     <value>PDF uloženo.</value>
   </data>
   <data name="NamedPageSizeFormat" xml:space="preserve">
-    <value>{0} ({1} × {2} {3})</value>
+    <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>Opravdu chcete smazat "{0}"?</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>Soubor nemůže být přepsán, protože je právě používán.</value>
@@ -320,12 +281,6 @@
   </data>
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>Průběh odstraňování zešikmení</value>
-  </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>Potřebné stažení</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>K importu tohoto PDF je nutná doplňující komponenta. Chcete ji teď stáhnout?</value>
   </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
     <value>Určitě chcete přerušit dávkové skenování?</value>
@@ -339,11 +294,11 @@
   <data name="DonatePrompt" xml:space="preserve">
     <value>NAPS2 je zcela zdarma. Zvažte poskytnutí daru.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>Ovladač SANE není dostupný. Ověřte instalaci požadovaných balíčků:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Napsat recenzi</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>OCR není dostupné. Ověřte instalaci požadovaného balíčku:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Líbí se vám NAPS2?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Vybraný ovladač není na tomto systému podporován.</value>
@@ -367,10 +322,10 @@
     <value>Vyhledávání...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>Kontrola aktualizací je vypnuta.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
-    <value>Při pokusu o aktualizaci došlo k chybě..</value>
+    <value>Při pokusu o aktualizaci došlo k chybě.</value>
   </data>
   <data name="Install" xml:space="preserve">
     <value>Instalovat {0}</value>

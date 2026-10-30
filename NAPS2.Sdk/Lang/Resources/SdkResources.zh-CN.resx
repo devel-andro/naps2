@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>选定的扫描仪处于脱机状态.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>与扫描设备的通信中断</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -42,9 +45,6 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>输稿器中未发现纸张.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>您没有从文件 '{0}' 中复制内容的权限.</value>
-  </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>所选的扫描仪不支持双面扫描。如果您的扫描仪支持双面扫描，请尝试使用不同的驱动程序.</value>
   </data>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>扫描仪正在预热.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>SANE 驱动不可用。请确认已安装所需的软件包:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>OCR 组件不可用。请确认已安装所需的软件包:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>所选驱动程序不受本系统支持.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>运行OCR时出错。</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>OCR操作超时</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>工作进程崩溃</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>工作进程崩溃。检查 Windows 事件查看器</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>未知扫描仪</value>
   </data>
 </root>

@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>Naozaj chcete odstrániť {0} položky?</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>Naozaj chcete odstrániť {0} profilov?</value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>Naozaj chcete odstrániť profil {0}?</value>
   </data>
@@ -51,15 +48,6 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>Súbor bitmapy (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Enhanced Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Exchangeable Image File (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>Súbor GIF (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
     <value>Súbor JPEG (*.jpg, *.jpeg)</value>
   </data>
@@ -73,7 +61,7 @@
     <value>Súbor TIFF (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>Súbor JPEG2000 (*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>Chýba názov.</value>
@@ -97,7 +85,7 @@
     <value>Naskenovaný obrázok</value>
   </data>
   <data name="SelectProfileBeforeScan" xml:space="preserve">
-    <value>Pred kliknutím na Skenovať najskôr vyberte profil.</value>
+    <value>Najskôr vyberte profil pred kliknutím na Skenovať.</value>
   </data>
   <data name="UnknownDriverError" xml:space="preserve">
     <value>Pri ovládači skenovania sa vyskytla chyba.</value>
@@ -107,18 +95,6 @@
   </data>
   <data name="EmailError" xml:space="preserve">
     <value>Pri pokuse o odosielanie e-mailu sa vyskytla chyba.</value>
-  </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>Inštalácia dokončená</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>Inštalácia dokončená. Chcete teraz reštartovať NAPS2?</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>Inštalácia zlyhala.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>Inštalácia zlyhala</value>
   </data>
   <data name="AllCount" xml:space="preserve">
     <value>Všetko ({0})</value>
@@ -136,10 +112,7 @@
     <value>{0} / {1} MB</value>
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
-    <value>Súbor '{0}' sa nemožno importovať.</value>
-  </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>Súbor '{0}' nemožno importovať. Možno importovať len PDF súbory vygenerované cez NAPS2.</value>
+    <value>Súbor '{0}' nemožno importovať.</value>
   </data>
   <data name="DownloadError" xml:space="preserve">
     <value>Chyba sťahovania</value>
@@ -171,26 +144,17 @@
   <data name="ActiveOperations" xml:space="preserve">
     <value>Priebeh operácie</value>
   </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>Skenovanie strany {0}</value>
-  </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Vybraný skener nepodporuje použitie podávača. Ak skener obsahuje podávač, skúste použiť iný ovládač.</value>
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>V podávači nie sú žiadne listy.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Nemáte povolenie na kopírovanie obsahu zo súboru '{0}'.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>Pri pokuse o uloženie súboru sa vyskytla chyba.</value>
   </data>
-  <data name="OfN" xml:space="preserve">
-    <value>z {0}</value>
-  </data>
   <data name="BatchError" xml:space="preserve">
-    <value>Počas dávkového skenovania sa vyskytla neznáma chyba.</value>
+    <value>Počas dávkového skenovania došlo k neznámej chybe.</value>
   </data>
   <data name="BatchStatusCancelled" xml:space="preserve">
     <value>Dávka zrušená.</value>
@@ -294,9 +258,6 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Skener sa zahrieva.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>Je dostupná aktualizácia OCR.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Obrázok bol uložený.</value>
   </data>
@@ -310,7 +271,7 @@
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>Naozaj chcete odstrániť znak "{0}"?</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>Súbor nemožno prepísať, pretože sa momentálne používa.</value>
@@ -321,12 +282,6 @@
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>Priebeh vyrovnávania sklonu</value>
   </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>Potrebné stiahnutie</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>Na import tohto súboru PDF je potrebný ďalší komponent. Chcete ho stiahnuť teraz?</value>
-  </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
     <value>Naozaj chcete zrušiť dávkové skenovanie?</value>
   </data>
@@ -334,16 +289,16 @@
     <value>Zrušiť dávku</value>
   </data>
   <data name="Donate" xml:space="preserve">
-    <value>Obdarovať</value>
+    <value>Darovať</value>
   </data>
   <data name="DonatePrompt" xml:space="preserve">
     <value>NAPS2 je úplne zadarmo. Zvážte obdarovanie.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>Ovládač SANE nie je k dispozícii. Preverte požadované balíky pre inštaláciu:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Zanechať recenziu</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>Mechanizmus OCR nie je k dispozícii. Určite preverte požadovaný balík pre inštaláciu:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Ako NAPS2?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>Vybraný ovládač nie je v tomto systéme podporovaný.</value>
@@ -367,7 +322,7 @@
     <value>Kontrola...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>Kontrola aktualizácií je vypnutá.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
     <value>Pri pokuse o inštaláciu aktualizácie sa vyskytla chyba.</value>

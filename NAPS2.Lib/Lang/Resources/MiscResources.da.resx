@@ -24,9 +24,6 @@
   <data name="ConfirmDeleteItems" xml:space="preserve">
     <value>Vil du virkelig slette {0} element(er)?</value>
   </data>
-  <data name="ConfirmDeleteMultipleProfiles" xml:space="preserve">
-    <value>Er du sikker på, at du vil slette {0} profiler?</value>
-  </data>
   <data name="ConfirmDeleteSingleProfile" xml:space="preserve">
     <value>Er du sikker på, at du vil slette profilen {0}?</value>
   </data>
@@ -37,10 +34,10 @@
     <value>Slet</value>
   </data>
   <data name="DeviceNotFound" xml:space="preserve">
-    <value>Den valgte skanner kan ikke findes.</value>
+    <value>Den valgte scanner blev ikke fundet.</value>
   </data>
   <data name="DeviceOffline" xml:space="preserve">
-    <value>Den valgte skanner er offline.</value>
+    <value>Den valgte scanner er offline.</value>
   </data>
   <data name="DontHavePermission" xml:space="preserve">
     <value>Du har ikke rettigheder til gemme filer på dette sted.</value>
@@ -51,29 +48,20 @@
   <data name="FileTypeBmp" xml:space="preserve">
     <value>Bitmap filer (*.bmp)</value>
   </data>
-  <data name="FileTypeEmf" xml:space="preserve">
-    <value>Enhanced Windows MetaFile (*.emf)</value>
-  </data>
-  <data name="FileTypeExif" xml:space="preserve">
-    <value>Exchangeable Image File (*.exif)</value>
-  </data>
-  <data name="FileTypeGif" xml:space="preserve">
-    <value>GIF File (*.gif)</value>
-  </data>
   <data name="FileTypeJpeg" xml:space="preserve">
-    <value>JPEG File (*.jpg, *.jpeg)</value>
+    <value>JPEG- Fil (*.jpg, *.jpeg)</value>
   </data>
   <data name="FileTypePdf" xml:space="preserve">
     <value>PDF dokument (*.pdf)</value>
   </data>
   <data name="FileTypePng" xml:space="preserve">
-    <value>PNG File (*.png)</value>
+    <value>PNG-fil (*.png)</value>
   </data>
   <data name="FileTypeTiff" xml:space="preserve">
-    <value>TIFF File (*.tiff, *.tif)</value>
+    <value>TIFF-fil (*.tiff, *.tif)</value>
   </data>
   <data name="FileTypeJp2" xml:space="preserve">
-    <value>JPEG2000 File (*.jp2, *.jpx)</value>
+    <value>JPEG2000-fil (*.jp2, *.jpx)</value>
   </data>
   <data name="NameMissing" xml:space="preserve">
     <value>Navn mangler.</value>
@@ -85,7 +73,7 @@
     <value>Ingen enheder valgt.</value>
   </data>
   <data name="NoDevicesFound" xml:space="preserve">
-    <value>Ingen skannerenheder blev fundet.</value>
+    <value>Ingen scannincsenheder blev fundet.</value>
   </data>
   <data name="OverwriteFile" xml:space="preserve">
     <value>Overskriv fil</value>
@@ -94,10 +82,10 @@
     <value>{0} af {1}</value>
   </data>
   <data name="ScannedImage" xml:space="preserve">
-    <value>Skannet billede</value>
+    <value>Scannet billede</value>
   </data>
   <data name="SelectProfileBeforeScan" xml:space="preserve">
-    <value>Vælg profil før klik på skan.</value>
+    <value>Vælg en profil før du klikker på scan.</value>
   </data>
   <data name="UnknownDriverError" xml:space="preserve">
     <value>Der opstod en fejl med scanner driveren.</value>
@@ -106,19 +94,7 @@
     <value>Version {0}</value>
   </data>
   <data name="EmailError" xml:space="preserve">
-    <value>En fejl opstod under forsøg på at sende en email.</value>
-  </data>
-  <data name="InstallComplete" xml:space="preserve">
-    <value>Installation er færdig</value>
-  </data>
-  <data name="InstallCompletePromptRestart" xml:space="preserve">
-    <value>Installationen er færdig. Ønsker du at genstarte NAPS2 nu?</value>
-  </data>
-  <data name="InstallFailed" xml:space="preserve">
-    <value>Installationen mislykkedes.</value>
-  </data>
-  <data name="InstallFailedTitle" xml:space="preserve">
-    <value>Installationen mislykkedes</value>
+    <value>Der opstod en fejl under forsøget på at sende en e-mail.</value>
   </data>
   <data name="AllCount" xml:space="preserve">
     <value>Alle ({0})</value>
@@ -138,9 +114,6 @@
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>Filen '{0}' kunne ikke blive importeret.</value>
   </data>
-  <data name="ImportErrorNAPS2Pdf" xml:space="preserve">
-    <value>Filen '{0}' kunne ikke blive importeret. Kun PDF filer lavet af NAPS2 kan bliver importeret.</value>
-  </data>
   <data name="DownloadError" xml:space="preserve">
     <value>Overførselsfejl</value>
   </data>
@@ -151,7 +124,7 @@
     <value>Tilpasset ({0}x{1} {2})</value>
   </data>
   <data name="Scan" xml:space="preserve">
-    <value>Skan</value>
+    <value>Scan</value>
   </data>
   <data name="ConfirmResetImages" xml:space="preserve">
     <value>Er du sikker på at du vil fortryde din ændring(er) af {0} billede(r)?</value>
@@ -163,16 +136,13 @@
     <value>Du har ændringer, der ikke er gemt. Er du sikker på, at du vil afslutte uden at gemme ændringerne?</value>
   </data>
   <data name="ExitWithActiveOperations" xml:space="preserve">
-    <value>An operation is in progress. Are you sure you want to exit and cancel the operation?</value>
+    <value>En handling er i gang. Er du sikker på, at du vil afslutte og annullere handlingen?</value>
   </data>
   <data name="UnsavedChanges" xml:space="preserve">
     <value>Ikke-gemte ændringer</value>
   </data>
   <data name="ActiveOperations" xml:space="preserve">
-    <value>Operation in Progress</value>
-  </data>
-  <data name="ScanPageProgress" xml:space="preserve">
-    <value>Scanner side {0}</value>
+    <value>Handling er i gang</value>
   </data>
   <data name="NoFeederSupport" xml:space="preserve">
     <value>Den valgte scanner understøtter ikke at bruge en dokumentføder. Hvis din scanner har en dokumentføder, skal du prøve at bruge en anden driver.</value>
@@ -180,17 +150,11 @@
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Der er ingen billeder i føderen.</value>
   </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>Du har ikke rettigheder til at kopiere indhold fra filen '{0}'.</value>
-  </data>
   <data name="ErrorSaving" xml:space="preserve">
     <value>En fejl opstod under forsøg på at gemme filen.</value>
   </data>
-  <data name="OfN" xml:space="preserve">
-    <value>af {0}</value>
-  </data>
   <data name="BatchError" xml:space="preserve">
-    <value>En ukendt fejl opstod under batch scanning.</value>
+    <value>En ukendt fejl opstod under batch-scanning.</value>
   </data>
   <data name="BatchStatusCancelled" xml:space="preserve">
     <value>Batch annulleret.</value>
@@ -256,7 +220,7 @@
     <value>Gemmer {0}...</value>
   </data>
   <data name="Print" xml:space="preserve">
-    <value>Print</value>
+    <value>Udskriv</value>
   </data>
   <data name="Copying" xml:space="preserve">
     <value>Kopierer...</value>
@@ -268,10 +232,10 @@
     <value>Importerer...</value>
   </data>
   <data name="EmailPdf" xml:space="preserve">
-    <value>Email PDF</value>
+    <value>E-mail til PDF</value>
   </data>
   <data name="EmailPdfProgress" xml:space="preserve">
-    <value>Email PDF fremskridt</value>
+    <value>E-mail PDF fremskridt</value>
   </data>
   <data name="AutoSaveError" xml:space="preserve">
     <value>En fejl opstod under forsøg på på at gemme automatisk.</value>
@@ -294,9 +258,6 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>Scanneren varmer op.</value>
   </data>
-  <data name="OcrUpdateAvailable" xml:space="preserve">
-    <value>En opdatering til OCR er tilgængelig.</value>
-  </data>
   <data name="ImageSaved" xml:space="preserve">
     <value>Billede gemt.</value>
   </data>
@@ -310,7 +271,7 @@
     <value>{0} ({1}x{2} {3})</value>
   </data>
   <data name="ConfirmDelete" xml:space="preserve">
-    <value>Are you sure you want to delete "{0}"?</value>
+    <value>Vil du virkelig slette {0} element(er)?</value>
   </data>
   <data name="FileInUse" xml:space="preserve">
     <value>Filen kunne ikke overskrives, fordi den er i brug.</value>
@@ -321,71 +282,65 @@
   <data name="AutoDeskewProgress" xml:space="preserve">
     <value>Ret op fremskridt</value>
   </data>
-  <data name="DownloadNeeded" xml:space="preserve">
-    <value>Download krævet</value>
-  </data>
-  <data name="PdfImportComponentNeeded" xml:space="preserve">
-    <value>En ekstra komponent er krævet for at importere denne fil. Vil du downloade komponenten nu?</value>
-  </data>
   <data name="ConfirmCancelBatch" xml:space="preserve">
-    <value>Are you sure you want to cancel the batch scan?</value>
+    <value>Er du sikker på du vil annullere batch-scanningen?</value>
   </data>
   <data name="CancelBatch" xml:space="preserve">
-    <value>Cancel Batch</value>
+    <value>Annuller batch</value>
   </data>
   <data name="Donate" xml:space="preserve">
-    <value>Donate</value>
+    <value>Doner</value>
   </data>
   <data name="DonatePrompt" xml:space="preserve">
-    <value>NAPS2 is completely free. Consider making a donation.</value>
+    <value>NAPS2 er helt gratis. Overvej at foretage en donation.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>The SANE driver is not available. Make sure to install the required packages:</value>
+  <data name="LeaveAReview" xml:space="preserve">
+    <value>Leave a Review</value>
   </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>The OCR engine is not available. Make sure to install the required package:</value>
+  <data name="ReviewPrompt" xml:space="preserve">
+    <value>Like NAPS2?</value>
   </data>
   <data name="DriverNotSupported" xml:space="preserve">
-    <value>The selected driver is not supported on this system.</value>
+    <value>Den valgte driver er ikke understøttet på dette system.</value>
   </data>
   <data name="OcrProgress" xml:space="preserve">
-    <value>OCR Progress</value>
+    <value>OCR-fremskridt</value>
   </data>
   <data name="RunningOcr" xml:space="preserve">
-    <value>Running OCR...</value>
+    <value>Udfører OCR...</value>
   </data>
   <data name="UpdateProgress" xml:space="preserve">
-    <value>Update Progress</value>
+    <value>Opdateringsstatus</value>
   </data>
   <data name="Updating" xml:space="preserve">
-    <value>Updating...</value>
+    <value>Opdaterer...</value>
   </data>
   <data name="NoUpdates" xml:space="preserve">
-    <value>No updates available.</value>
+    <value>Der er ingen tilgængelige opdateringer.</value>
   </data>
   <data name="CheckingForUpdates" xml:space="preserve">
-    <value>Checking...</value>
+    <value>Søger...</value>
   </data>
   <data name="UpdateCheckDisabled" xml:space="preserve">
-    <value>Update checking is disabled.</value>
+    <value>Opdateringstjek er slået fra.</value>
   </data>
   <data name="UpdateError" xml:space="preserve">
-    <value>An error occured when trying to install the update.</value>
+    <value>Der opstod en fejl under opdateringen.</value>
   </data>
   <data name="Install" xml:space="preserve">
-    <value>Install {0}</value>
+    <value>Installer {0}</value>
   </data>
   <data name="UpdateAvailable" xml:space="preserve">
-    <value>An update is available.</value>
+    <value>En opdatering er tilgængelig.</value>
   </data>
   <data name="AuthError" xml:space="preserve">
-    <value>An error occurred when trying to authorize.</value>
+    <value>Der opstod en fejl forsøg på godkendelse.</value>
   </data>
   <data name="UploadingEmail" xml:space="preserve">
-    <value>Uploading email...</value>
+    <value>Uploader e-mail...</value>
   </data>
   <data name="ErrorEmailing" xml:space="preserve">
-    <value>An error occurred when trying to send the email.</value>
+    <value>Der opstod en fejl under forsøget på at sende e-mailen.</value>
   </data>
   <data name="ScanProgressPage" xml:space="preserve">
     <value>Scanner side {0}...</value>

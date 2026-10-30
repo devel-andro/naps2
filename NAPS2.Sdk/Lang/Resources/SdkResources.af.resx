@@ -18,6 +18,9 @@
   <data name="DeviceOffline" xml:space="preserve">
     <value>The selected scanner is offline.</value>
   </data>
+  <data name="DeviceCommunicationFailure" xml:space="preserve">
+    <value>Kommunikasie met die skandeertoestel is onderbreek.</value>
+  </data>
   <data name="NAPS2" xml:space="preserve">
     <value>NAPS2</value>
   </data>
@@ -28,10 +31,10 @@
     <value>Geen skandering toestel gevind.</value>
   </data>
   <data name="UnknownDriverError" xml:space="preserve">
-    <value>Có lỗi xảy ra với trình điều khiển máy quét.</value>
+    <value>Daar was n fout met die skandeer drywer.</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>Version {0}</value>
+    <value>Weergawe {0}</value>
   </data>
   <data name="ImportErrorCouldNot" xml:space="preserve">
     <value>The file '{0}' could not be imported.</value>
@@ -41,9 +44,6 @@
   </data>
   <data name="NoPagesInFeeder" xml:space="preserve">
     <value>Geen bladsye is in die voerder.</value>
-  </data>
-  <data name="PdfNoPermissionToExtractContent" xml:space="preserve">
-    <value>You do not have permission to copy content from the file '{0}'.</value>
   </data>
   <data name="NoDuplexSupport" xml:space="preserve">
     <value>The selected scanner does not support using duplex. If your scanner is supposed to support duplex, try using a different driver.</value>
@@ -60,13 +60,22 @@
   <data name="DeviceWarmingUp" xml:space="preserve">
     <value>The scanner is warming up.</value>
   </data>
-  <data name="SaneNotAvailable" xml:space="preserve">
-    <value>The SANE driver is not available. Make sure to install the required packages:</value>
-  </data>
-  <data name="TesseractNotAvailable" xml:space="preserve">
-    <value>The OCR engine is not available. Make sure to install the required package:</value>
-  </data>
   <data name="DriverNotSupported" xml:space="preserve">
     <value>The selected driver is not supported on this system.</value>
+  </data>
+  <data name="OcrError" xml:space="preserve">
+    <value>OCR fout het voorgekom.</value>
+  </data>
+  <data name="OcrTimeout" xml:space="preserve">
+    <value>The OCR operation timed out.</value>
+  </data>
+  <data name="WorkerCrash" xml:space="preserve">
+    <value>The worker process crashed.</value>
+  </data>
+  <data name="WorkerCrashWindows" xml:space="preserve">
+    <value>The worker process crashed. Check the Windows event viewer.</value>
+  </data>
+  <data name="UnknownScanner" xml:space="preserve">
+    <value>Unknown Scanner</value>
   </data>
 </root>
